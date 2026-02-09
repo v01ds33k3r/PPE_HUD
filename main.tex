@@ -1,0 +1,54 @@
+% !TEX program = xelatex
+
+% DOCUMENT SETUP
+\documentclass[
+    12pt,
+    a4paper,
+    titlepage,
+    bibliography=totoc,
+]{scrartcl}
+\usepackage[margin=25mm]{geometry}
+
+% PACKAGES
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[
+        backend=biber,
+        style=apa
+    ]{biblatex}
+    \addbibresource{meta/thesis.bib}
+    %\bibliographystyle{apalike}
+\usepackage{graphicx} % insert images
+%\usepackage{listings} % code blocks + syntax highlighting
+    %\lstset{basicstyle=\ttfamily,numberstyle=\ttfamily\scriptsize,breaklines=true,numbers=left}
+
+% TYPOGRAPHY
+\ifxetex
+\usepackage{fontspec}
+\setsansfont{Inter Light}
+\setmonofont{IBM Plex Mono Light}
+\renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\usepackage{relsize}
+\usepackage{multicol}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{1em}
+
+\usepackage[hidelinks]{hyperref} % links
+
+\begin{document}
+    \include{meta/title}
+
+    \tableofcontents
+
+    \include{content/1_introduction}
+    \include{content/content}
+    \section{Conclusion}
+
+    \addsec{Appendix}
+    %\input{meta/glossary}
+    \include{meta/bibliography}
+\end{document}
+
