@@ -1,6 +1,10 @@
 \section{Conceptualization}
 
-\subsection{Data Visualisation}
+\subsection{Data Visualization}
+
+HUD visualization transforms data into information [\cite{terganKnowledgeInformationVisualization2005}]
+
+For legibility, linear visualization types perform better. [\cite{xiaVisualizingWristImpact2025}]
 
 weighting of parameters if space is limited, visual hierarchy
 
@@ -26,6 +30,7 @@ show units? Y, except low on space/minimal version
 movement
 
 pop up warning
+pops up in center + then moves to the side (to not hinder visibility) w/ blinking icon (so it's not forgotten)
 
 icons vs unit
 unit format -> might be less relevant if number + smaller unit
@@ -43,9 +48,12 @@ language?
 
 just icons for hazardous atmosphere/environment
 
+
+50-70\% transparency in brightly-lit room \parencite{hussainEffectTransparencyLevels2024} with green only
+
 \subsection{User Interface}
 
-ELEMENTS
+\subsubsection{Elements}
 
 requirements: lowest mental/sensory load possible
 
@@ -55,18 +63,26 @@ Diagrams vs just a number (movement of diagram might be distracting)
 
 each on dark + varied bg
 
-LAYOUT
+\subsubsection{Layout}
+
+Positioning in field of view
+avoid central line of sight 0°-8°
+According to \cite{linFindingOptimumPosition2021}, 8° to 20° horizontally seem to be most comfortable.
+Vertically limit to 8° above and below visual center
 
 positioning elements? some directions seem to be favored for distractability?
 
-FOV diagram w/ angles
+GRAPHIC FOV diagram w/ angles
 
 do i need to leave space at the sides for peripheral vision? how much?
 
+Leaving as much space as possible between elements bc of crowding
+max. 3 elements per side, center free
+
+maximum + minimal version
+
 ---
 
-2 layers: main info (HUD, doesn't move) + AR (hazard highlighting, moves)
-
-overlap? "border" where highlights disappear before overlapping w/ HUD?
-
 crowding: experiment w/ spacing, prefer looser layout
+
+\cite{janakaNotiFadeMinimizingOHMD2023} getting attention without harshly interrupting primary task

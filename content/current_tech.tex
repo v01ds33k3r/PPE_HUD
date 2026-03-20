@@ -1,41 +1,41 @@
-\section{Current Technological Limitations}
+\section{Augmented Reality Technology}
 
-What are common drawbacks of all possible technologies that might be mitigated via UI design?
+GRAPHIC AR layers
 
----
+2 layers: main info (HUD, doesn't move) + AR (hazard highlighting, moves)
 
-Helm/Atemmaske vs Schutzanzug
-
--> image source has to be anchored to vision via tech
-- motion sickness
-
-\subsection{Optical See-Through Display/Holographic Image}
-
-All of these scenarios involve a certain level of danger or hazards, making it imperative to not cut off senses if system breaks, especially because the device cannot be taken off -> optical see-through. 
-
-even legal requirement/standard?
-
----
-
-functionality relevant to UI
-
-image formed through light
-additive color model
-
-lighter color = more light + opacity -> eye strain
-
-\subsection{Lighting Conditions and Background Variation}
-
-Lighting and Background are tightly coupled.
-
-50-70\% transparency in brightly-lit room \parencite{hussainEffectTransparencyLevels2024}
-
-Since Confined Spaces have minimal lighting (see section 1), they are an optimal background for readability. The brightness and opacity could be reduced.
-
----
-
-dark env + torch: harsh lighting makes difference?
-
----
+HUD technically not AR, but extension of it
 
 XR immersion situational awareness
+
+inadequate tech puts movement in the image, flickering, glitching etc
+
+XR opens up new avenues of interaction
+not constrained to two dimensions -> can implement more "natural" movement, gestures
+
+effects of motion on legibility
+
+\subsection{Limitations of Optical See-Through Displays}
+
+All industrial scenarios involve a certain level of danger or hazards, making it imperative to not cut off senses if system breaks, especially because the device cannot be taken off -> optical see-through. 
+
+Regardless of used technology, images are formed with light
+- additive color model, black is basically transparent \cite{kimEffectsDarkMode2019}
+- competes with ambient lighting for visibility
+
+Are there legal requirements/standards?
+lighter color = more light + opacity -> eye strain?
+
+\subsection{Color Blending}
+
+\cite{gabbardPerceptualColorMatchingMethod2022} advises to use colors with high source luminance, with red usually not perceived as red -> would prefer to use yellow as warning color
+
+Since Confined Spaces have minimal lighting (see section 1), they are an optimal background for readability. The brightness and opacity could be reduced. dark env + torch might impact readability
+
+Industrial equipment, especially if it might be easily damaged, 
+technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
+Making sure the proposed design foundations work in monochrome as well enables choosing more economic options, aside from accessibility.
+
+---
+
+\cite{itohIndistinguishableAugmentedReality2021}
