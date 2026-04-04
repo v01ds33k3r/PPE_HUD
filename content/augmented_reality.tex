@@ -1,0 +1,56 @@
+\section{Augmented Reality Technology}
+
+Augmented reality can be classified into the extended reality spectrum. In AR "virtual objects [are] superimposed upon or composited with the real world" AZUMA 1997, in opposition to virtual reality, which replaces the real environment completely.
+
+Sub-category of XR, which also includes Mixed and Virtual Reality. 
+Distinction to VR: sense of immersion, something to avoid for this use case
+
+Distinction to MR: MR includes *interactable* virtual objects.
+XR opens up new avenues of interaction
+not constrained to two dimensions -> can implement more "natural" movement, gestures
+AR and VR share aspects of interface design and interaction, which could be referenced.
+HARI CHANDANA 2023
+
+Going after AZUMA 1997's definition, for applications to be classified as AR they have to fulfill the following three requirements: they combine real and virtual content, they are interactive in real-time, and virtual objects are registered in 3D space (world-stabilized). The last criterium was chosen so as to include other technologies besides HMDs.
+- real and virtual objects "coexist" in the same space, thus requires see-through
+
+A head-up display overlays information onto reality in the user's line of sight to avoid the need to look away from their primary task to acquire needed information. Originally used in military aircraft, today HUDs are built into consumer vehicles as well. The displayed information is not anchored to the real world. In the case of a head-worn display, the information is head-stabilized, i.e. 2D planes around the user (see fig AR layers).
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/XR_layers.eps}
+    \caption{Visualization layers of head-mounted displays: reality, Augmented Reality (3D, world-stabilized) and User Interface (2D, head-stabilized)}
+    \label{fig:XR_layers}
+\end{figure}
+
+World-stabilized elements are helpful for exploring and better for immersion.
+When the needed information is unrelated to the environment, head-stabilized display might be better. WHY?
+Another reason for head-stabilized display is that it is hard to orient information when moving around.
+World-stabilized information might even impact acquisition of information, since the information is not always in the same spatial orientation (e.g. i want info on oxygen, i look to the left).
+
+Manufacturers of AR and VR headsets recommend avoiding classic 2D interfaces, because it breaks immersion. The planned use cases for this HUD require the opposite—to be able to focus on the primary task in the real world.
+
+\subsection{Limitations of Optical See-Through Displays}
+
+All industrial scenarios involve a certain level of danger or hazards, making it imperative to not cut off senses if system breaks, especially because the device cannot be taken off -> optical see-through. 
+
+Regardless of used technology, images are formed with light
+- additive color model, black is basically transparent \cite{kimEffectsDarkMode2019}
+- competes with ambient lighting for visibility
+
+Are there legal requirements/standards?
+lighter color = more light + opacity -> eye strain?
+
+\subsection{Color Blending}
+
+\cite{gabbardPerceptualColorMatchingMethod2022} advises to use colors with high source luminance, with red usually not perceived as red -> would prefer to use yellow as warning color
+
+Since Confined Spaces have minimal lighting (see section 1), they are an optimal background for readability. The brightness and opacity could be reduced. dark env + torch might impact readability
+
+Industrial equipment, especially if it might be easily damaged, 
+technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
+Making sure the proposed design foundations work in monochrome as well enables choosing more economic options, aside from accessibility.
+
+---
+
+\cite{itohIndistinguishableAugmentedReality2021}
