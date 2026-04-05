@@ -11,6 +11,17 @@ Referencing rules for visual hierarchy, the usage of contrasts heightens differe
 
 The following design guidelines are tailored to ensure the best visibility and information acquisition possible.
 
+Industrial equipment, especially if it might be easily damaged, 
+technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
+Making sure the proposed design foundations work in monochrome as well enables choosing more economic options, aside from accessibility.
+
+\cite{vicenteEcologyHumanMachineSystems1990}
+**novice vs expert users**
+users are/will be trained with equipment -> able to forego certain design principles
+is there a distinction between end user and professional/trained user?
+shneiderman (user interfaces): novice + expert user, universal usability
+HYPO acceptance of HUD is better with newly trained people regarding mental load, since they don't need to change existing patterns
+
 \subsection{Color and Contrast}
 
 The use of color is mainly limited by current optical see-through technology. As mentioned by GABBARD, colors with high source luminance will be visible best. Tying into economic reasons, designing the HUD functions to work with one color only ensures affordability as well.
@@ -40,6 +51,31 @@ The following design will use white, since it is the best visible color on an op
 
 \subsection{Iconography}
 
+Needed information is found quicker when presented as graphical content.
+
+- amount of coded information
+
+Icons can utilize small screen estate more efficently.
+
+- plane-based icons 
+  - another reason goes back to MATSUURA's typography study: lines are gonna be harder to read
+
+LIN 2016
+"Well-designed graphical icons can achieve such positive effects as drawing users’ attention, shortening search time, reducing operational errors, and relieving users’ burden."
+- plane-based icons are recognized easier
+- line-based icons dissect the space more often = more complex
+- complexity lowers recognition performance -> even more if backgrounds adds another complex layer
+- white on black icon performed best
+
+JANAKA 2023
+- icon-augmented notifcations
+  - significantly higher primary task performance than text
+  - reduced interruption while maintaining reaction and comprehension
+- when the primary task’s complexity increased or needed higher attentional control, users familiar with icons could understand pictogram format better than text format.
+- In such specialized domains, it is easier to defne a set of well-designed icons that become highly familiar to users through repeated use
+- icon-augmented notifcations are easier to perceive in suboptimal conditions during mobile OHMD usage. Specifcally, even though virtual content on OHMD is blurred when users focus on the physical world, i.e., limited OHMD focal distance [47, 48], the pictogram format on OHMD can be easier to recognize than the text format
+- higher salience during shakes, be easier to perceive in sub-optimal conditions (sec 9.2.3), and provide higher attention control
+
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
@@ -58,6 +94,8 @@ Especially due to the need of thicker strokes, an icon's readability might be im
 
 \subsection{Typography and Stroke Width}
 
+Aside from screen shake, reading performance is further impacted by lighting and background texture. To find requirements for font size, RENKEWITZ 2008 tested the effect of "background texture and font color on text recognition". They set a benchmark of two seconds as threshold for fast recognition, which resulted in font size thresholds from 23 to 42 pt, depending on color and background. These numbers might have to be adjusted for an OST-HMD, since they used a video see-through system, and red and blue as colors, both colors with lower luminance.
+
 The typeface "Inter" fulfills all of the requirements. It has a uniform thickness of strokes, square letter width and good spacing between its lines.
 
 Naturally, the same requirements exist for the stroke width.
@@ -72,3 +110,57 @@ Naturally, the same requirements exist for the stroke width.
 \subsection{Layout and Spacing}
 
 As mentioned in PERIPHERAL VISION, crowding affects information acquisition the most. It seems advisable to prefer wider spacing between elements. limiting the number of elements per side to 3 so they can be spatially anchored to the corners and one slot in between.
+
+\cite{chuaPositioningGlassInvestigating2016}
+- ! monocular OST-HMD
+- middle + bottom center positions were noticed quicker
+- top + peripheral positions were more comfortable, unobtrusive
+- center-right is mentioned as best balance between usability + comfort
+
+\cite{katsuyamaEffectsVisualDisplay1989}
+- studied task requiring frequent eye shifts
+- (1) displays located 15° below a primary viewing area are better perceived than identical displays located 15° above
+- (2) ratings of discomfort involved in eye movements (necessitated by the viewing of physically separated displays) correspond to their performances on the secondary task
+- task performance decreases the further the distance from center
+
+\cite{kimInfluencesAugmentedReality2019}
+- tasks that require referencing information
+- "performance, workload, and usability were more affected by UI designs than the HWD type."
+- "Compared to the baseline paper pick list condition, using an HWD, especially with the graphic-based UI, led to improved job performance and reduced perceived workload, while causing increased discomfort"
+- "Responses to the workplace cognitive failure scale also indicated a lower risk of cognitive failure specifically with the graphic-based UI design + always-on display."
+
+DYSON 2001
+
+According to \textcite{linFindingOptimumPosition2021}, 8° to 20° horizontally seem to be most comfortable.
+Vertically limit to 8° above and below visual center
+- "We are surprised to discover that there are no significant differences in task times between the four different display positions. We expected a more uncomfortable viewing angle would have a more dramatic effect in slowing users so that their order picking times would increase, especially for the bottom-right position." BUT "we realized that users stop after picking one book to find and plan their path to pick their next book, instead of trying to read and interpret data while on the move. The extra time taken to stop and plan their path could mask the differences in time taken to perceive picking information"
+- "the bottom-center position could be inferior in situations in which users have to look at their feet such as stairs mobility and rough terrain maneuvering."
+- "A bottom-right display could also interfere with tasks involving the hands."
+- "The display situated between 5.4° to 14.6° toward the ear was most preferred by users. It did not block the line-of-sight view and was also closest to center-center positioning. However, Dowell’s work on cognitive capture [8] suggests keeping all pixels at least 8° from line-of-sight."
+- "there may be an ideal, general purpose HWD position between 8 to 20° temporally offset from line-of-sight. Horizontal FOV would thus be 12°. Vertical FOV requires more investigation, but limiting pixels to between ±8° from center as in Haynes’s comfort study [21] seems wise"
+- "As mentioned previously, from Chua’s work we wish to avoid nasally offset displays, and positions much above line-of-sight are uncomfortable for extended use CHUA 2015."
+- used a monocular display? with 12° x 16° FOV, theorize that they could put another display on the other side, doubling the FOV, and users can switch between -> results should be applicable to HUD
+
+\cite{dowellEffectVisualLocation2002}
+- flight sim
+- "HUD information located less than 8 deg from the out-the-window point of interest can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed"
+- "Additionally, it was shown that HUD symbology placed in the upper portion of the visual scene (greater than 8 deg from the central focus), led to improved simultaneous processing of the HUD symbology and the forward view." BUT "hypothesized that this difference is rooted in the reduced clutter and background motion found when the HUD overlaid the sky, as opposed to the ground."
+
+\subsection{Notifications}
+
+The billboard style occludes much of reality around the text, which should generally be avoided. However, exactly the feature makes it suitable for high priority notifications.
+
+\textcite{matthewsToolkitManagingUser2004} mention three ascpects of attention management in their "Peripheral Displays Toolkit": abstracting information to make it glanceable (see GLANCEABILITY concept), assigning notification levels to information and designing (visual) and transitions between those levels.
+
+Screen edge indicators might not work.
+
+
+---
+
+Abstraction of Information
+
+optimal information density: shows all relevant information without over whelming the user
+
+GRAPHIC abstraction as scale of readability <-> unobtrusiveness
+
+Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
