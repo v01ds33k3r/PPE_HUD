@@ -1,4 +1,5 @@
 \section{Augmented Reality Technology}
+\label{sec:AR}
 
 Augmented reality can be classified into the extended reality spectrum. In AR "virtual objects [are] superimposed upon or composited with the real world" AZUMA 1997, in opposition to virtual reality, which replaces the real environment completely.
 
@@ -30,18 +31,39 @@ World-stabilized information might even impact acquisition of information, since
 
 Manufacturers of AR and VR headsets recommend avoiding classic 2D interfaces, because it breaks immersion. The planned use cases for this HUD require the opposite—to be able to focus on the primary task in the real world.
 
-\subsection{Limitations of Optical See-Through Displays}
+\subsection{Optical See-Through Displays}
 
-All industrial scenarios involve a certain level of danger or hazards, making it imperative to not cut off senses if system breaks, especially because the device cannot be taken off -> optical see-through. 
+Apart from built-in HUDs, information can be presented via a head-mounted display. This affixes the display to the head, usually with a helmet or as glasses, enabling mobile usage. The display can cover one (monocular) or both eyes. Depending on the technology, both eyes receive the same image (biocular) or each will be shown a different image (binocular).
 
-Regardless of used technology, images are formed with light
-- additive color model, black is basically transparent \cite{kimEffectsDarkMode2019}
-- competes with ambient lighting for visibility
+HMDs can be monocular, biocular or binocular. In a monocular system, both eyes receive different information, since the HMD is placed in front of only one eye. This introduces the problem of binocular rivalry. With a biocular display, the same image is presented to both eyes, which affects depth perception. Binocular presents a different image to both eyes CAKMAKCI 2006. The depth perception here is affected by the vergence-accomodation conflict. also causes eye strain. 
 
-Are there legal requirements/standards?
-lighter color = more light + opacity -> eye strain?
+- explain binocular rivalry LARAMEE 2002
+- explain how biocular affects depth perception?
+- vergence-accomodation conflict
+	- ZHOU 2021
 
-\subsection{Color Blending}
+There are two options to combine digital content with reality. With video see-through, information will be superimposed on a video stream filmed by a camera on the headset. These headsets are fully occluded, the stream replaces the outside view.
+An optical see-through system allows the user to directly view reality. HOW DOES THE IMAGE APPEAR?
+
+It is important to plan around possible equipment failures, which must not endanger the worker. Failing equipment must not impair vision, especially because it cannot be taken off in a fully encapsulated suit. Contrary to fully-occluding VR headsets, Optical See-Through Displays are transparent.
+
+SCREEN SHAKE section here
+
+\subsubsection{Ambient Light and Contrast Issues}
+
+Regardless of optic technology, images are formed by combining light, meaning the display competes with ambient lighting for visibility, which is especially problematic in outdoor conditions. Most established OSTs provide around X lux, compared to overcast winter sky ca. 6000 lux, sunlight > 100.000 lux.
+
+KERR 2011, for example, report that participants repeatedly used their hands to shield the display from external light to be able to read  the content on the display.
+
+This follows the additive color model, where adding all wavelengths of light together results in white. Black is defined throught the absence of light. With physical screens, the color we see is the actual color of the display material. Since OSTs have no physical screen, "black" is transparent GABBARD, 2013. This also means that darker colors are unavailable for designing on OSTs, since they are mostly translucent.
+
+Many current OSTs like [MODEL] have shaded lenses to improve the contrast somewhat ITOH 2021. Unfortunately, current AR technology is not capable of rendering the contrast levels necessary for outdoor use ERICKSON 2020. Technical solutions in development include OSTs that can partially occlude areas of the display to block light. Still very experimental DAVARI 2020.
+
+(On the other hand, when wearing an OST in dark environments, it is advisable to adjust the brightness to avoid eye strain and washing out the real world.)
+
+The biggest issue for legibility is missing contrast in bright environments. Especially outdoors, visibility of current OST technology is poor.
+
+\subsubsection{Color Blending}
 
 \cite{gabbardPerceptualColorMatchingMethod2022} advises to use colors with high source luminance, with red usually not perceived as red -> would prefer to use yellow as warning color
 
@@ -54,3 +76,10 @@ Making sure the proposed design foundations work in monochrome as well enables c
 ---
 
 \cite{itohIndistinguishableAugmentedReality2021}
+
+\subsection{Interaction and Information Access}
+
+Eye Tracking
+
+Context-Aware interfaces
+

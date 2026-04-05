@@ -1,0 +1,74 @@
+\section{Design Guidelines}
+\label{sec:guidelines}
+
+Following scenario requirements, technical limitations and human factors, the HUD needs to fulfill the following demands:
+
+Ideally, the finished system shows as much information as possible/necessary without limiting situation awareness, causing fatigue or sensory overload. The displayed information should be comprehensible in as short a time as possible.
+
+In an emergency, the system must be able to get the user's attention, without hindering decision-making or interrupting the primary task completely.
+
+Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
+
+The following design guidelines are tailored to ensure the best visibility and information acquisition possible.
+
+\subsection{Color and Contrast}
+
+The use of color is mainly limited by current optical see-through technology. As mentioned by GABBARD, colors with high source luminance will be visible best. Tying into economic reasons, designing the HUD functions to work with one color only ensures affordability as well.
+
+Limiting the UI to one color makes sure the design works in all aspects (e.g. using motion to get attention before color). Another reason is the economic factor: especially in scenarios where it's likely that equipment needs to be replaced because of damage or contamination, the acquisition cost should be as low as possible. One way to achieve this is to only have a monochrome display. So, the HUD UI should be able to function without accent colors. This also avoids impairing users with color blindness.
+
+The library chroma.js can sort colors by luminance in the RGB color space, based on the Web Content Accessibility Guidelines 2.0. Sorting the base colors red (\#FF0000), green (\#00FF00), blue (\#0000FF) and their intermediaries cyan (\#00FFFF), magenta (\#FF00FF) and yellow (\#FFFF00) puts them into the following order (darkest to brightest): blue, red, magenta, green, cyan and yellow.
+
+\begin{figure}[hbt]
+    \centering
+    %\includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
+    \caption{Base colors sorted by luminance.}
+    \label{fig:colors_sorted}
+\end{figure}
+
+https://gka.github.io/chroma.js/\#color-luminance
+
+https://www.w3.org/TR/2008/REC-WCAG20-20081211/\#relativeluminancedef
+
+https://rapidtoolset.com/en/tool/colors-sorter
+
+These results can be confirmed via the OKLCH 3D model as well: input constant, high lightness and any hue, chroma peaks are yellow, green, cyan. Full chroma is needed to avoid colors blending together.
+
+https://oklch.com/
+
+The following design will use white, since it is the best visible color on an optical see-though display. If color is applicable, yellow will be used as accent color, mainly reserved for notifications, to heighten the contrast with the standard mode. Following Gabbard's study, red seems to be suboptimal, since it is strongly susceptible to color shifting.
+
+\subsection{Iconography}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
+    \caption{Line-based (left) and plane-based (right) icons.}
+    \label{fig:icons_hazard}
+\end{figure}
+
+Especially due to the need of thicker strokes, an icon's readability might be impacted. Simpler icons with varied silhouettes offset this.
+
+\begin{figure}[hbt]
+    \centering
+    %\includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
+    \caption{Adjustment for the readability of the explosive hazard icon.}
+    \label{fig:icon_explosive}
+\end{figure}
+
+\subsection{Typography and Stroke Width}
+
+The typeface "Inter" fulfills all of the requirements. It has a uniform thickness of strokes, square letter width and good spacing between its lines.
+
+Naturally, the same requirements exist for the stroke width.
+
+\begin{figure}[hbt]
+    \centering
+    %\includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
+    \caption{A comparison of different stroke widths.}
+    \label{fig:stroke_width}
+\end{figure}
+
+\subsection{Layout and Spacing}
+
+As mentioned in PERIPHERAL VISION, crowding affects information acquisition the most. It seems advisable to prefer wider spacing between elements. limiting the number of elements per side to 3 so they can be spatially anchored to the corners and one slot in between.
