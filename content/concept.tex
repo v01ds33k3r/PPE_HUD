@@ -9,13 +9,13 @@ A prioritization of elements is necessary for decisions on visual hierarchy, as 
     \begin{tabular}{l | p{0.25\linewidth} | p{0.25\linewidth} | p{0.25\linewidth}}
         & Display Mode & Visualization \\
         \hline
-        Oxygen & Continuous & Progress Bar, Value \\
+        Oxygen & Continuous & Status Bar, Value \\
         Hazard Proximity & Pop-Up & Icon \\
         Warning Notification & Pop-Up & Billboard \\
         Working Time & Pop-Up, Continuous & Countdown \\
         Heart Rate & Continuous & Icon, Value, Trend \\
         Ambient Temperature & Continuous & Icon, Value, Trend \\
-        Humidity & Continuous &  Icon, Value, Trend \\
+        Humidity & Continuous &  Icon, Value \\
         Checklist & Continuous & Line Highlight \\
         Tool Help & Pop-Up & Icon, Value \\
     \end{tabular}
@@ -30,18 +30,32 @@ Continuous means that the component will be displayed permanently. Parameters ma
 
 Following the previous guidelines, every element is designed for maximum clarity.
 
-\subsubsection{Visualizing Oxygen Usage Through a Progress Bar}
+\subsubsection{Visualizing Oxygen Usage Through a Status Bar}
 
-Since the oxygen value is the crucial factor whether or not to continue work, this is the component taking the spotlight. As the most critical parameter, this component will be visible in any version of the HUD. To check the current status as quickly as possible, the value will be visualized with a progress bar.
+Since the oxygen value is the crucial factor whether or not to continue work, this is the component taking the spotlight. As the most critical parameter, this component will be visible in any version of the HUD. To check the current status as quickly as possible, the value will be visualized with a status bar.
 
 Visualization helps to avoid mental math.
 
-graphical vs text: progress bar is understood faster than the number amount + unit
+graphical vs text: status bar is understood faster than the number amount + unit
 
-The first decision was the way to visualize the progress bar. Mechanical pressure gauges with mechanical pointer show visual progress by default. 
+The first decision was the way to visualize the status bar. Mechanical pressure gauges with mechanical pointer show visual progress by default. 
 According to \textcite{xiaVisualizingWristImpact2025}, bar charts outperform radial visualization.
 
-The second version implements the progress bar in four segments, making it easier to estimate the amount left. Another hypothetical advantage of the gaps in the bar might be that more of the background can be seen.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/oxy_radial_bar.eps}
+    \caption{The base component with configurable icon, parameter value, unit and trend indicator.}
+    \label{fig:oxy_radial_bar}
+\end{figure}
+
+The second version implements the status bar in four segments, making it easier to estimate the amount left. Another hypothetical advantage of the gaps in the bar might be that more of the background can be seen.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/oxy_segment.eps}
+    \caption{The base component with configurable icon, parameter value, unit and trend indicator.}
+    \label{fig:oxy_segment}
+\end{figure}
 
 Depending on screen real estate, there are horizontal and vertical versions of the component.
 
@@ -49,10 +63,16 @@ In the horizontal version the label is placed in front of the bar so as not to h
 
 In the vertical orientation, the label and value are aligned at the top and bottom respectively, to account for visual crowding.
 
-The oxygen value is located so that the progress bar is seen first, e.g. if the component is on the left, the bar will be on the right side. This helps to maintain an optical guide.
+The oxygen value is located so that the status bar is seen first, e.g. if the component is on the left, the bar will be on the right side. This helps to maintain an optical guide.
 
 - time left w/ current breathing rate
 
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/oxy_vertical.eps}
+    \caption{The base component with configurable icon, parameter value, unit and trend indicator.}
+    \label{fig:oxy_vertical}
+\end{figure}
 
 \subsubsection{The Base Component}
 
@@ -60,16 +80,17 @@ This element is built with a simple configuration for secondary information that
 
 Values that are not to be visualized are similar enough to be based on a universal base component. Apart from the actual parameter value, any of these elements can be hidden. This allows flexible configuration depending on the type of information.
 
+The icons replace labels, and should therfore be as unambiguous as possible.
 If the icon is unambiguous enough, it is easier to hide the unit. In some cases, the unit supports the identification of the value. Leaving the unit out saves space as well.
 
-The trend arrows are displayed based on the difference of the current and previous value. If the value rises or falls an unusual amount, which could note environmental events. For dynamic elements like these, the frequency of changes should not be too high to avoid distraction.
+The trend indicators are displayed based on the difference of the current and previous value. If the value rises or falls an unusual amount, which could note environmental events. For dynamic elements like these, the frequency of changes should not be too high to avoid distraction.
 
 Comparing the short and long arrows, the long arrows are better readable when out of focus.
 
 \begin{figure}[hbt]
     \centering
-    %\includegraphics[width=0.5\textwidth]{assets/FOV.eps}
-    \caption{The base component with configurable icon, parameter value, unit and trend arrow.}
+    \includegraphics[width=1\textwidth]{assets/base_component.eps}
+    \caption{The base component with configurable icon, parameter value, unit and trend indicator.}
     \label{fig:base_component}
 \end{figure}
 
@@ -119,12 +140,14 @@ The icon to the right is an anchor for possible gaze-based interaction, in this 
 
 \subsection{UI Examples}
 
+\emph{Note: the following illustrations are not to scale.}
+
 The maximum variant of the interface was designed with full functionality in mind, based on Microsoft's HoloLens 2\footnote{}. This includes a horizontal field of view of 43°, a resolution of 1440 by 936 pixel per eye and full color availability (within the technical limits mentioned in section \ref{sec:AR}).
 
 \begin{figure}[hbt]
     \centering
-    %\includegraphics[width=0.5\textwidth]{assets/FOV.eps}
-    \caption{Example UI for a binocular HUD. }
+    \includegraphics[width=1\textwidth]{assets/UI_max.png}
+    \caption{Full-featured UI concept for a binocular HUD.}
     \label{fig:UI_max}
 \end{figure}
 
@@ -142,7 +165,21 @@ A point could be made for overlapping components somewhat to use the space bette
 
 \begin{figure}[hbt]
     \centering
-    %\includegraphics[width=0.5\textwidth]{assets/FOV.eps}
-    \caption{}
+    \includegraphics[width=1\textwidth]{assets/UI_overlap.eps}
+    \caption{UI concept for a monocular HUD, worn in the upper left of the field of vision.}
+    \label{fig:UI_overlap}
+\end{figure}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/UI_min.png}
+    \caption{UI concept for a monocular HUD, worn in the upper left of the field of vision.}
     \label{fig:UI_min}
+\end{figure}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/HUD_size.png}
+    \caption{Size comparison of the Microsoft HoloLens 2 and the Google Glass Enterprise Edition 2.}
+    \label{fig:HUD_size}
 \end{figure}

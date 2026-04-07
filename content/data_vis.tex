@@ -1,40 +1,151 @@
 \section{Data Visualization}
 \label{sec:datavis}
 
+%extracting information out of data
+
 Visualizating data transforms it into information. Data itself is just noise, whereas information holds value. In what way data needs to be transformed is determined by context [\cite{terganKnowledgeInformationVisualization2005}].
 
-The type of visualization depends on the purpose of the information. The main constraint in this case is cognitively demanding situations.
+The focus of data visualization is to make large datasets understandable. Most fundamentals explain how to chart this data well. Interpreting a chart needs time and cognitive space that is not available in scenarios like the confined space entry described in section \ref{sec:CPC}. In these situations a clear picture of the current status has to be available immediately. Expanding general design foundations with some aspects of data visualization can still improve the quality of such status displays.
 
-\subsection{Situation Awareness and Cognitive Load}
+Since the presented scenarios only allow for single data values, the amount of possible visualization types is minimal. Ferdio, an agency specialized on infographics and data visualization, has created a library of visualization types\footnote{\href{https://datavizproject.com/}{Data Viz Project | Collection of data visualizations to get inspired and find the right type}}. In this library, out of a 166 options, nine are for single data.
 
-As mentioned earlier, the tasks to execute are mentally demanding. Concentrating on fulfilling task objectives while maintaining awareness of the surrounding area result in a high cognitive load, while associated risks prohibit human error. Endsley's model of situation awareness can be referenced to estimate the requirements of information acquisition in dynamic situations.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/ferdio_single_data_page.png}
+    \caption{The options for single data (highlighted in the menu bar) in Ferdio's data visualization library.}
+    \label{fig:ferdio_single_data}
+\end{figure}
 
-\textcite{endsleyTheorySituationAwareness1995} proposes a model of situation awarenes, describing the process of decision-making in dynamic situations. This includes 3 levels, namely perception, comprehension and projection. Only Level 1 awareness—perception—is relevant for UI design itself, though some concepts from Level 2 can be used to exemplify things to avoid.
+\cite{wilke2VisualizingData2019}
+% https://learning.oreilly.com/library/view/fundamentals-of-data/9781492031079/ch02.html
 
-By displaying relevant information on a HUD, some level of situational awareness could be restored. Freeing up cognitive load, which can then be reallocated. Going by Endsley's definition, that would increase the likelihood of making better decisions.
 
-- "role of goals and goal-directed processing in directing attention and interpreting the significance of perceived information"
-- circles back to visual attention
-    - goal-directed (top-down) vs data-directed (bottom-up) processing
-	- information salience to grab attention (data-driven)
-- "people as active participants in the development of their own SA, based on how they direct their attention, communicate with team mates, and manipulate their tools to search for desired information"
-- "ongoing dynamic process of gathering and interpreting information to update the situation model and using that situation model to search for information until decisions can be made"
+Visual variables correspond to the fundamental design elements
+bertin: position, size, shape, color hue, color value, orientation, texure
 
-- "role of environmental, task, and system factors in SA, including the capability of systems for deriving needed information; the effect of system complexity on SA; the **effectiveness of the user interface for providing rapid access and understandability of needed information**; the role of stressors, workload, and fatigue on SA mechanisms and processes; and the effect of automation on SA"
-ENDSLEY 1995 mentions the advantage of systems providing processed information instead of only the data it is based on (i.e. displaying remaining time based on current oxygen amount and usage). Other recommendations are:
-- focus types and grouping of information on supporting decision-making for current goal (-> context awareness)
+nominal, ordinal, quantitative data
 
-"Cognitive load theory (CLT) is concerned with the design of interfaces that allow users maximize their working memory when problem solving. This includes eliminating any subjective mental load that may be imposed by the instruction interface." DABOR 2019 SIMULT INTERPRETATION
+Information Encoding
+% visual encoding of information: encoding also works by highlighting differences (e.g. if a monochrome display is green, the color green holds no meaning)
+% - color mapping, visual marks, axis ranges
 
-\subsection{Types of Information}
+% \cite{chewarUnpackingCriticalParameters2004} IRC framework (interruption, reaction, comprehension)
 
+% \cite{behrischQualityMetricsInformation2018}
+% - fig 3: metrics categorized by cognitive complexity
+% - component design focuses on mid-level perception and relating design patterns (reducing clutter, task effectiveness, details on demand)
+% - planned notification system exploits low-level perception (preattentive processing, gestalt laws, change blindness)
+% - visual patterns to intuitively understand mathematical patterns
+% - signal-to-noise ratio
+
+The type of visualization depends on the purpose of the information. 
 Depending on the character of the data, different methods of visualization could be chosen.
 
-Comparable to basic dashboard data, only value of the parameter is relevant, since there is no relationship between the data. At most it is the relation between a current and a past value of a parameter.
+Comparable to basic dashboard data, only the value of the parameter is relevant, since there is no relationship between the data. At most it is the relation between a current and a past value of a parameter.
 
 Purposes of color to cenvey information are grouping or relationships. Grouping is necessary for the HUD, but is managed by the spatial location of and the spacing between elements.
 
-\cite{wilke2VisualizingData2019}
-https://learning.oreilly.com/library/view/fundamentals-of-data/9781492031079/ch02.html
+\subsection{Situation Awareness}
 
-\subsection{Visualization Methods}
+% associated risks prohibit human error
+% to estimate the requirements for efficient information acquisition in dynamic situations
+% "Acquiring and maintaining SA becomes increasingly difficult, however, as the complexity and dynamics of the environment increase"
+% "In complex and dynamic environments, attention demands resulting from information overload, complex decision making, and multiple tasks can quickly exceed a person's limited attention capacity"
+
+Making good judgements becomes increasingly difficult when performing demanding procedures while being under stress and maintaining awareness of the surrounding area. \textcite{endsleyTheorySituationAwareness1995} highlights the role of situation awareness as a foundation for good decision-making in dynamic situations. She outlines three levels of SA, namely perception, comprehension and projection, of which perception is the most significant for UI design. This stage requires collecting the information relevant to the situation. In level 2 this information will be analyzed to form "a holistic picture of the environment, comprehending the significance of objects and events." Finally, likely outcomes can be determined by understanding the dynamics of the situation. 
+
+It is evident that situation awareness is therefore dependent on the processes of attention described in section \ref{sec:HVS_attention}. Subsequently, this illustrates the necessity of a thorough understanding of the pieces required for achieving good situation awareness to design a well-functioning HUD. The amount of information that can be rapidly and accurately obtained is directly influenced by how it is presented. In addition to prioritizing and organizing that information around task objectives, \textcite{endsleyTheorySituationAwareness1995} mentions the advantage of systems providing processed information rather than the data it is based on (e.g. displaying remaining time based on current oxygen amount and usage). 
+
+Special attention should be paid to reserve highly salient features to critical events that truly necessitate changing the course of action. Further, it is vital to maintain a balance between showing all relevant information, while simultaneously avoiding visual overload. While looking for inaccessible information, other important content may be overlooked. Conversely, "filtering of extraneous information (not related to SA needs) and reduction of data (by processing and integrating low-level data to arrive at SA requirements)" is necessary to prevent clutter. This reiterates the importance of accurately evaluating and prioritizing task-relevant information.
+
+Considering these recommendations supports evaluating the interaction of all components, since emphasizing some elements inevitably comes at the expense of others. Assessing the design concept by the amount of situation awareness it provides serves as the last step of ensuring the effectiveness of the system.
+
+% "Cognitive load theory (CLT) is concerned with the design of interfaces that allow users maximize their working memory when problem solving. This includes eliminating any subjective mental load that may be imposed by the instruction interface." DABOR 2019 SIMULT INTERPRETATION
+
+\subsection{The Concept of Glanceability}
+
+It could also add the capability to summon more information when looking at an anchor. This method was tested by \textcite{luGlanceableAREvaluating2020}.
+
+context awareness \cite{krevelenSurveyAugmentedReality2010}
+Context-Aware interfaces display information based on current task or cognitive load \cite{rhodesWIMPInterfaceConsidered1998}. The risk of false positives is unjustifiable in safety-critical environments.
+
+Instead of showing the UI at all times, the elements could be positioned outside of the HMD's field of view, to be accessed by either looking or turning the head in the direction. \textcite{luGlanceableAREvaluating2020} explored and tested this concept, naming it "Glanceable AR".
+
+- related to gaze-based interaction
+- head-turning method requires body position tracker to enable sensing the head turning in relation to the body
+
+Would be helpful for secondary information [DEFINE secondary info]. To avoid the user needing to remember in which direction the information was placed, this information could be anchored by representative icons. Or the primary information which hides related information (e.g. task list that shows current and a limited amount of next steps, that displays the complete list when accessed)
+
+LU 2020, 2023
+- "designing glanceable interfaces requires careful consideration not only about how to present information visually, but also about how to access the information effectively"
+\textcite{luGlanceableAREvaluating2020} proposes four design principles: "DP1. Virtual content should be fixed to the user. DP2. Virtual content should be spatially distributed in the periphery. DP3. The interaction to access virtual content should be hands-free. DP4. Information should be accessed by glancing quickly at the periphery."
+- voice input: disturbs others in public, HERE: radio comms, loud industrial env
+- "we define “periphery” as the space at the edges of or beyond the field of view (FoV) of the AR display"
+- eye-glance interface (HUD)
+	- baseline, does not require sensors or trackers
+	- "benefits of information being highly visible and accessible, but it may also be obtrusive, occlude the real world, and cause the problem of information overload"
+	- always-there information might interfere with peripheral awareness
+- head-glance
+	- content outside FOV, fixed to body, turn head to access -> clear view
+	- requires to look away from forward FOV momentarily, impacted performance of primary task in study (keeping a specified distance to virtual human when walking)
+		- HYPO might be problematic when moving quickly (emergency)
+	- mental demand higher in study, possibly because of
+		- frequency of information access, leading to a lot of extra head movement avoidable by other methods
+		- need to remember location of information
+- gaze-summon (look at indicator for 0.5 sec to display information)
+	- additional time needed to access information results in unusability for industrial use case
+	- possible eye strain from keeping gaze on target
+	- increase of false positives when participants took a turn (reflex to look into intended direction + eye-tracking jitter from quick head movements)
+\textcite{luGlanceableAREvaluating2020} mentions the display being less impactful when participants concentrated on the primary task. CONCENTRATION LEVEL?
+- CON primary task of walking not comparable to task with high cognitive load + physical demands
+
+Peripheral Displays
+- there's often alternative forms of information display involved, especially hardware design more resembling art objects than traditional computing devices
+- ubiquitous computing: computing everywhere in any format
+
+Although peripheral displays are usually mentioned in tandem with ubiquitous computing, relating concepts are applicable here. The first is context awareness of systems,
+The second, and arguably more relevant, is attention management.
+
+MATTHEWS 2006
+- peripheral/ambient displays "move information from the periphery to the center of human attention and back"
+- "Peripheral displays receive varying amounts of attention depending on how easily users can interpret the information they convey."
+	- this seems interesting
+	- does this mean you pay less attention when the information is easier to parse?
+- "Glanceability is critical to peripheral display design because users need to quickly glance at and read displayed information with minimal interruption to their primary task."
+- MATTHEWS 2005 distinguishes between peripheral and notification displays, which are used at the operation and action level respectively.
+	- this concept includes both as "display modes"
+- "Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion."
+- "Glanceability is greatly affected by the amount and type of information being displayed."
+- visual search processes bottom-up (raw sensory input) vs top-down (goal-driven) CONNOR 2004 -> that's the vocab for the passive/active modes i had in mind!
+- "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out. \cite{baldassiPopoutTargetsModulated2004}"
+	- "Pop-out is a bottom-up drawing of attention to an object, which occurs when an object within the visual field is distinctive along some visual dimension (for example, possessing a distinctive color or brightness when compared with other objects in the field)." -> POWER OF CONTRAST
+- "If visual features are to be used successfully in glanceable displays, they will need to balance distinctiveness with too much demand for attention."
+- variables were used to distinguish between versions of otherwise the same items (e.g. email categories of notifications)
+- task description after \textcite{chewarUnpackingCriticalParameters2004}: notification, reaction, comprehension
+- HYPO icon position for notification dependent on display placement direction (i.e. icons on right side when display is on the left)
+- information types: ordered, unordered finite, unordered infinite
+- principles for representation
+	- semantically meaningful
+	- abstract
+	- distinct
+
+\textcite{ishiguroPeripheralVisionAnnotation2011} presented a method to show a simple icon that transitions to related information when gazed at.
+
+\cite{birnholtzAwarenessDesktopExploring2010} peripheral displays
+
+Notification levels equal importance of information, corresponding to action priority (in HUD case)
+TABLE notification level and corresponding design choices + elements
+e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
+
+- demand action requires user to perform an action to silence the alert -> will not be used in HUD
+	- could argue that oxygen low or hazard proximity demands action, but in in emergency cases there might be no way to immediately take action based on that, and the HUD should not impede the user's decision-making, which an ongoing alarm would do
+
+**passive/ambient/top-down**
+By default, the display just shows necessary information. This mode is designed to not get the user's attention so they can focus on their primary task. Another reason to avoid color and movement here is to have the maximum contrast possible if the user needs to get notified of something.
+
+\cite{janakaNotiFadeMinimizingOHMD2023} getting attention without harshly interrupting primary task
+\cite{salisburyAttentionChangesHeadWorn2024}
+
+**interruption/active/notification/bottom-up/**
+Certain functionality to get the user's attention is implemented.
+warning pops up in FFOV [\textcite{rosenholtzCapabilitiesLimitationsPeripheral2016}] + then moves to the side (to not hinder visibility) w/ blinking icon (so it's not forgotten)
