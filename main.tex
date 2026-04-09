@@ -1,60 +1,52 @@
 % !TEX program = xelatex
 
-% DOCUMENT SETUP
 \documentclass[
     12pt,
     a4paper,
     titlepage,
     bibliography=totoc,
+    bibliography=leveldown,
+    listof=totoc,
+    listof=leveldown
 ]{scrartcl}
-\usepackage[margin=25mm]{geometry}
 
-% PACKAGES
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[
-        backend=biber,
-        style=apa
+    backend=biber,
+    style=apa
     ]{biblatex}
     \addbibresource{meta/thesis.bib}
-    %\bibliographystyle{apalike}
-\usepackage{graphicx} % insert images
-%\usepackage{listings} % code blocks + syntax highlighting
-    %\lstset{basicstyle=\ttfamily,numberstyle=\ttfamily\scriptsize,breaklines=true,numbers=left}
-
-% TYPOGRAPHY
-\ifxetex
-\usepackage{fontspec}
-\setsansfont{Inter Light}
-\setmonofont{IBM Plex Mono Light}
-\renewcommand{\familydefault}{\sfdefault}
-\fi
-
-\usepackage{relsize}
-\usepackage{multicol}
-\usepackage{setspace}
-\onehalfspacing
-\setlength{\parskip}{1em}
-
-\usepackage[hidelinks]{hyperref} % links
+    
+\usepackage{graphicx}
+    
+\input{meta/formatting}
+    
+\setcounter{tocdepth}{2}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
-    %\include{meta/title}
+    \include{meta/title}
 
     \tableofcontents
 
-    %\include{content/introduction}
+    \include{content/introduction}
     \include{content/applications}
     \include{content/augmented_reality}
-    \include{content/HVS_attention}
+    \include{content/HVS_perception}
+    \include{content/attention}
     \include{content/data_vis}
     \include{content/guidelines}
     \include{content/concept}
-    %\include{content/prototype}
-    %\include{content/conclusion}
+    \include{content/conclusion}
 
-    %\addsec{Appendix}
-    %\input{meta/glossary}
-    \include{meta/bibliography}
+    \newpage
+    \addsec{Appendix}
+    \printbibliography
+    
+    \newpage
+    \phantomsection
+    \protect
+    \listoffigures
 \end{document}
 

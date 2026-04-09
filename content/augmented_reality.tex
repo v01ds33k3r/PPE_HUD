@@ -1,10 +1,10 @@
-\section{Augmented Reality Technology}
+\section{Augmented Reality}
 \label{sec:AR}
 
 Augmented reality (AR) is a subcategory of extended reality (XR), next to mixed reality (MR) and virtual reality (VR). In AR virtual objects are "superimposed upon or composited with the real world" [\cite{azumaSurveyAugmentedReality1997}], in opposition to virtual reality which—by replacing the real environment entirely—creates the deepest sense of immersion. Mixed reality combines features of both, the main distinction being the ability to interact with virtual objects in the real world [\cite{harichandanaExploringFrontiersUser2023}].
 
-\cite{viUserExperienceGuidelines2019}
-\cite{speicherWhatMixedReality2019}
+% \cite{viUserExperienceGuidelines2019}
+% \cite{speicherWhatMixedReality2019}
 
 \begin{figure}[hbt]
     \centering
@@ -15,66 +15,73 @@ Augmented reality (AR) is a subcategory of extended reality (XR), next to mixed 
 
 \textcite{azumaSurveyAugmentedReality1997} defines three requirements for applications to be classified as AR. They combine real and virtual content, they are interactive in real-time, and the virtual objects are registered in 3D space. With the technological advancements since the 2000s these requirements are understood more as guidelines than rules.
 
-A head-up display overlays information onto reality in the user's line of sight to avoid the need to look away from their primary task to acquire needed information. Originally used in military aircraft, today HUDs are built into consumer vehicles as well. Apart from these integrated HUDs, content can be presented on a head-mounted display. This affixes the display to the head, typically as a helmet or glasses, enabling mobile usage.  Contrary to the above definition by \textcite{azumaSurveyAugmentedReality1997}, the content displayed on a HUD is two-dimensional and head-stabilized, rather than anchored spatially, i.e. world-stabilized (see figure \ref{fig:XR_layers}). 
+A head-up display overlays information onto reality in the user's line of sight to avoid the need to look away from their primary task to acquire needed information. Originally used in military aircraft, today HUDs are built into consumer vehicles as well. Apart from these integrated HUDs, content can be presented on a head-worn display. This affixes the display to the head, typically as a helmet or glasses, enabling mobile usage.  Contrary to the above definition by \textcite{azumaSurveyAugmentedReality1997}, the content displayed on a HUD is two-dimensional and head-stabilized, rather than anchored spatially, i.e. world-stabilized (see figure \ref{fig:XR_layers}). Nevertheless, some authors, such as \textcite{luGlanceableAREvaluating2020}, categorize HUDs as AR.
+% precursor to AR, or otherwise closely intertwined with AR.
 
-Manufacturers of AR and VR headsets recommend avoiding classic 2D interfaces, because it breaks immersion. The planned use cases for this HUD require the opposite—to be able to focus on the primary task in the real world.
+% Manufacturers of AR and VR headsets recommend avoiding classic 2D interfaces, because it breaks immersion. The planned use cases for this HUD require the opposite—to be able to focus on the primary task in the real world.
 
-The most important feature of head-stabilized content is that it is consistently found in the same location.
-World-stabilized elements are helpful for exploring and better for immersion.
-When the needed information is unrelated to the environment, head-stabilized display might be better.
-Another reason for head-stabilized display is that it is hard to orient information when moving around.
+% The most important feature of head-stabilized content is that it is consistently found in the same location.
+% World-stabilized elements are helpful for exploring and better for immersion.
+% When the needed information is unrelated to the environment, head-stabilized display might be better.
+% Another reason for head-stabilized display is that it is hard to orient information when moving around.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/XR_layers.eps}
-    \caption{Visualization layers of head-mounted displays: reality, Augmented Reality (3D, world-stabilized) and User Interface (2D, head-stabilized).}
+    \caption{Visualization layers of head-worn displays: reality, Augmented Reality (3D, world-stabilized) and User Interface (2D, head-stabilized).}
     \label{fig:XR_layers}
 \end{figure}
 
-A head-mounted display can cover one (monocular) or both eyes. Depending on the technology, both eyes receive the same image (biocular) or each will be shown a different image (binocular). In a monocular system, both eyes receive different information, since the HMD is placed in front of only one eye. This introduces the problem of binocular rivalry. With a biocular display, the same image is presented to both eyes, which affects depth perception. Binocular presents a different image to both eyes CAKMAKCI 2006. The depth perception here is affected by the vergence-accomodation conflict. also causes eye strain. 
+A head-worn display can cover one (monocular) or both eyes. Depending on the technology, both eyes receive the same image (biocular) or each will be shown a different image (binocular). 
+
+%In a monocular system, both eyes receive different information, which often introduces the problem of binocular rivalry. With a biocular display, the same image is presented to both eyes, which affects depth perception. Binocular presents a different image to both eyes CAKMAKCI 2006. The depth perception here is affected by the vergence-accomodation conflict. also causes eye strain. 
 
 % binocular rivalry LARAMEE 2002
 % explain how biocular affects depth perception?
 % vergence-accomodation conflict ZHOU 2021
 
-\subsection{Technical Challenges Affecting User Interface Design}
+% \subsection{Technical Challenges Affecting User Interface Design}
 
-Limitations unique to optical see-through displays will be discussed in the following section.
+%Limitations unique to optical see-through displays will be discussed in the following section.
 
-\textbf{Field of View.} \textcite{syberfeldtAugmentedRealitySmart2017} puts the boundary for an acceptable field of view at 30° at minimum in industrial use cases, which current systems can fulfill. Microsoft's HoloLens sits at 43° by 29°, a few systems hit around 40° (https://vr-compare.com/ar).
+\textbf{Field of View.} \textcite{syberfeldtAugmentedRealitySmart2017} sets the threshold for an acceptable field of view at a minimum of 30° for industrial applications. Microsoft's HoloLens 2 features a 43° by 29° field of view, while a few other systems reach around 40°.\footnote{\href{https://vr-compare.com/ar}{Compare all AR Headsets \& Glasses - VRcompare}}
 
-\textbf{Screen Shake.} As with all head-worn devices, HMDs are suceptible to shaking when walking. \textcite{janakaNotiFadeMinimizingOHMD2023} found that this movement causes legibility issues. This problem can be avoided by using fonts with thicker strokes (both horizontal and vertical) [\cite{matsuuraReadabilityLegibilityFonts2019}].
+\textbf{Screen Shake.} As with all head-worn devices, HMDs are susceptible to shaking when moving, which causes legibility issues [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down movement.
 
 \subsection{Optical See-Through Displays}
 
-There are two approaches for combining virtual content with reality. With video see-through, information will be superimposed on a video stream filmed by a camera on the headset. These headsets fully occlude sight, the stream replaces the outside view. An optical see-through system allows the user to directly view reality. Here, optical combiners 
+There are two approaches for combining virtual content with reality. With video see-through, information will be superimposed on a video stream filmed by a camera on the headset. These headsets fully occlude sight, the stream replaces the outside view. An optical see-through system allows the user to directly view reality. 
+%Here, optical combiners 
 
-There is no weighing of advantages here. When a video see-through system fails, it will be impossible to see. Failing equipment must not impair vision, especially since it cannot be taken off in a fully encapsulated suit.
+%There is no weighing of advantages here. 
+When a video see-through system fails, it will be impossible to see. Failing equipment must not impair vision, especially since it cannot be taken off in a fully encapsulated suit.
+
+% Contrary to video see-through, OSTs do not rely on eye tracking, BLAH
 
 \subsubsection{Ambient Light and Contrast Issues}
 
-Regardless of optic technology, images are formed by combining light, meaning the display competes with ambient lighting for visibility, which is especially problematic in outdoor conditions. Most established OSTs provide around X lux, compared to overcast winter sky ca. 6000 lux, sunlight > 100.000 lux.
-The biggest issue for legibility is missing contrast in bright environments. Especially outdoors, visibility of current OST technology is poor. \textcite{kerrWearableMobileAugmented2011}, for example, report that participants repeatedly used their hands to shield the display from external light to be able to read  the content on the display.
+Regardless of the optic technology used, images are created by combining light, which means the display has to compete with ambient light for visibility. This results in a significant loss of contrast, especially outdoors.
+% Most established OSTs provide around X lux, compared to overcast winter sky ca. 6000 lux, sunlight > 100.000 lux.
+\textcite{kerrWearableMobileAugmented2011}, for example, report that participants repeatedly used their hands to shield the display from external light to be able to read  the its contents.
 
-This follows the additive color model, where adding all wavelengths of light together results in white. Black is defined throught the absence of light. With physical screens, the color we see is the actual color of the display material. Since OSTs have no physical screen, "black" is transparent [\cite{gabbardColorBlendingOutdoor2013}]. This also means that darker colors are unavailable for designing on OSTs, since they are mostly translucent. Many current OSTs like [MODEL] have shaded lenses to improve the contrast somewhat \cite{itohIndistinguishableAugmentedReality2021}. Unfortunately, current AR technology is not capable of rendering the contrast levels necessary for outdoor use [\cite{ericksonExploringLimitationsEnvironment2020}]. Technical solutions in development include OSTs that can partially occlude areas of the display to block light. Still very experimental [\cite{davariOcclusionManagementTechniques2020}].
+ Many manufacturers add shaded lenses to improve the contrast somewhat [\cite{itohIndistinguishableAugmentedReality2021}]. Unfortunately, current AR technology is not capable of rendering the contrast levels necessary for outdoor use [\cite{ericksonExploringLimitationsEnvironment2020}]. Technical solutions in development include OSTs that can partially occlude areas of the display to block light. Still very experimental [\cite{davariOcclusionManagementTechniques2020}].
+
+On physical screens, the color we see corresponds to the actual color of the display material. Since OSTs do not have a physical screen, “black” is transparent [\cite{gabbardColorBlendingOutdoor2013}]. This also means that darker colors are not available for design on OSTs, as they are mostly translucent. Many current OSTs, such as [MODEL], feature tinted lenses to slightly improve contrast [\cite{itohIndistinguishableAugmentedReality2021}]. Unfortunately, current AR technology is unable to display the contrast levels required for outdoor use [\cite{ericksonExploringLimitationsEnvironment2020}]. Technical solutions currently under development include OSTs that can partially cover areas of the display to block light. However, this is still very experimental [\cite{davariOcclusionManagementTechniques2020}].
 
 % TANAKA 2008 propose a method to automatically place content where the readability is better, i.e. darker segments of the background. Concepts like these might not be usable in safety-critical use cases, since the user relies on spatially anchored elements for fast acquisition of information.
 
 \subsubsection{Color Blending}
 
-Because of the display transparency, the background impacts colors [\cite{itohIndistinguishableAugmentedReality2021}].
-
-% GABBARD
+In the additive color model, the combination of all wavelengths of light produce white, while black is created by the absence of light. When physical screens are turned off, the actual color of the display material is visible. Since OSTs do not have a physical screen, "black" is transparent and darker colors mostly translucent [\cite{gabbardColorBlendingOutdoor2013}]. Additionally, the level of transparency affects the extent to which the background distorts the color [\cite{itohIndistinguishableAugmentedReality2021}].
 
 % Both the decreased contrast and the color blending can be avoided with retinal \cite{krevelenSurveyAugmentedReality2010}
 % Retinal projection technology does not have limitations on FOV, but is still in development.
 
-\subsection{Methods of Interaction}
+\subsection{Methods of Interaction} %\subsection{Interaction and the Concept of Glanceability}
 
 Due to not being constrained to two dimensions, XR applications can explore new types of interaction, such as gesture recognition, speech recognition and gaze tracking.
+However, industrial use cases require hands-free interaction methods. Additionally, noise levels in these environments limit possible interaction to gaze tracking.
+Even with these constraints, \textcite{harichandanaExploringFrontiersUser2023} emphasize the importance of interactions being intuitive and feeling natural. % -> again, decreasing cognitive burden
 
-\cite{krevelenSurveyAugmentedReality2010} WIMP only for 2D, AR needs six degrees of freedom (translation and rotation XYZ)
-
-\textcite{harichandanaExploringFrontiersUser2023} emphasize the importance interactions being intuitive and feeling natural.
-
-Industrial use cases require hands-free interaction methods—i.e. speech and gaze. Due to the often very noisy environments in industrial environments, gaze tracking is more reliable.
+Gaze-based interaction is enabled by eye tracking technology. In addition to tracking eye position, it analyzes where the user is looking and how long.
+% \cite{krevelenSurveyAugmentedReality2010} WIMP only for 2D, AR needs six degrees of freedom (translation and rotation XYZ)
