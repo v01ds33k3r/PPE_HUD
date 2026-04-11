@@ -1,7 +1,7 @@
 \section{Augmented Reality}
 \label{sec:AR}
 
-Augmented reality (AR) is a subcategory of extended reality (XR), along mixed reality (MR) and virtual reality (VR). In AR virtual objects are "superimposed upon or composited with the real world" [\cite{azumaSurveyAugmentedReality1997}], in opposition to virtual reality which—by replacing the real environment entirely—creates the deepest sense of immersion. Mixed reality combines features of both concepts, the main distinction being the ability to interact with virtual objects in the real world [\cite{harichandanaExploringFrontiersUser2023}].
+Augmented reality (AR) is a subcategory of extended reality (XR), alongside mixed reality (MR) and virtual reality (VR). In AR, virtual objects are "superimposed upon or composited with the real world" [\cite{azumaSurveyAugmentedReality1997}], in opposition to virtual reality which—by replacing the real environment entirely—creates the deepest sense of immersion. Mixed reality combines features of both concepts, the main distinction being the ability to interact with virtual objects in the real world [\cite{harichandanaExploringFrontiersUser2023}].
 
 % \cite{viUserExperienceGuidelines2019}
 % \cite{speicherWhatMixedReality2019}
@@ -43,13 +43,14 @@ A head-mounted display can cover one (monocular) or both eyes. Depending on the 
 \subsection{Optical See-Through Displays}
 \label{subsec:OST}
 
-There are two approaches to combining virtual content with reality. With video see-through displays, information is superimposed onto a video stream captured by a camera mounted on the device. These headsets fully enclose the head to block external light. In contrast, an optical see-through system allows the user to view reality directly. Here, the overlay is created by optical combiners blending light from the image source and the environment together.
+There are two approaches to combining virtual content with reality. With video see-through displays, information is superimposed onto a video stream captured by a camera mounted on the device. These headsets fully enclose the head to block external light. In contrast, an optical see-through (OST) system allows the user to view reality directly. Here, the overlay is created by optical combiners blending light from the image source and the environment together.
 
 Since video see-through displays completely block the view of the outside world, it is impossible to see anything in the event of a failure. Given the intended use cases, this represents a major safety issue, especially since the headset cannot be removed while wearing a fully encapsulating suit.
 
+% TODO transition rest of section
 \textcite{syberfeldtAugmentedRealitySmart2017} recommends a field of view of at least 30° for industrial applications. Microsoft's HoloLens 2 features a 43° by 29° field of view, while a few other systems offer around 40°.\footnote{\href{https://vr-compare.com/ar}{Compare all AR Headsets \& Glasses - VRcompare}}
 
-As with all head-mounted devices, HMDs shake when walking, which affects legibility [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down movement. % doch in guidelines?
+As with all head-mounted devices, walking causes them to shake, which affects legibility [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down motion.
 
 Apart from these technical limitations, see-through displays present a number of major problems affecting interface design.
 
@@ -59,17 +60,17 @@ Regardless of the optic technology used, images are created by combining light, 
 % Most established OSTs provide around X lux, compared to overcast winter sky ca. 6000 lux, sunlight > 100.000 lux.
 \textcite{kerrWearableMobileAugmented2011}, for example, report that participants repeatedly used their hands to shield the display from external light to be able to read its contents.
 
-Many manufacturers add shaded lenses to improve the contrast somewhat [\cite{itohIndistinguishableAugmentedReality2021}]. Unfortunately, current AR technology is not capable of rendering the contrast levels necessary for outdoor use [\cite{ericksonExploringLimitationsEnvironment2020}]. Technical solutions currently in development include OSTs that can partially occlude areas of the display to block light. However, these are still very experimental [\cite{kiyokawaOpticalSeethroughDisplay2000}, \cite{davariOcclusionManagementTechniques2020}].
-% occlusion tech
+Many manufacturers of optical see-through displays equip them with shaded lenses to improve the contrast somewhat [\cite{itohIndistinguishableAugmentedReality2021}]. Unfortunately, current OST technology is incapable of producing the contrast levels required for outdoor use [\cite{ericksonExploringLimitationsEnvironment2020}]. 
+% TODO explain more
+Technical solutions currently in development include OSTs that can partially occlude areas of the display to block light. However, these are still very experimental [\cite{kiyokawaOpticalSeethroughDisplay2000}, \cite{davariOcclusionManagementTechniques2020}].
 
-As a hardware-independent solution, \cite{tanakaInformationLayoutMethod2008} propose a method to automatically place content where the readability is better, i.e. darker segments of the background. Concepts like these might not be usable in safety-critical use cases, since the user relies on spatially anchored elements for fast acquisition of information.
+As a hardware-independent solution, \cite{tanakaInformationLayoutMethod2008} propose a method for automatically placing content where readability is better, i.e. darker segments of the background. Such concepts might not be suitable for safety-critical scenarios, as users rely on spatially anchored elements to quickly acquire information.
 
 \subsubsection{Color Blending}
 
-In the additive color model, the combination of all wavelengths of light produce white, while black is created by the absence of light. When physical screens display black, the corresponding pixels do not emit light, so the actual color of the display material is visible. Since OSTs do not have a physical screen, “black” is transparent [\cite{gabbardColorBlendingOutdoor2013}]. This also means that darker colors are not available for design on OSTs, as they are mostly translucent.
-Additionally, the level of transparency affects the extent to which the background distorts the color [\cite{itohIndistinguishableAugmentedReality2021}].
+In the additive color model, the combination of all wavelengths of light produce white, while black is created by the absence of light. When physical screens display black, the corresponding pixels do not emit light, so the actual color of the display material is visible. Since OHMDs do not have a physical screen, "black" is transparent [\cite{gabbardColorBlendingOutdoor2013}]. This also means that darker colors are not available for design on OHMDs, as they are mostly translucent. Additionally, the level of transparency affects the extent to which the background distorts the color [\cite{itohIndistinguishableAugmentedReality2021}].
 
-GABBARD FINDINGS
+% TODO gabbard findings
 
 % Both the decreased contrast and the color blending can be avoided with retinal \cite{krevelenSurveyAugmentedReality2010}
 % Retinal projection technology does not have limitations on FOV, but is still in development.
@@ -78,9 +79,10 @@ GABBARD FINDINGS
 
 % \cite{krevelenSurveyAugmentedReality2010} WIMP only for 2D, AR needs six degrees of freedom (translation and rotation XYZ)
 Due to not being constrained to two dimensions, XR applications can explore new types of interaction, such as gesture recognition, speech recognition and gaze tracking.
-However, industrial use cases require hands-free interaction methods. Additionally, noise levels in these environments limit possible interaction to gaze tracking.
+However, industrial use cases require hands-free interaction methods and the high noise levels expected in these environments limit the possible forms of interaction to eye tracking.
 Even with these constraints, \textcite{harichandanaExploringFrontiersUser2023} emphasize the importance of interactions being intuitive and feeling natural. % -> again, decreasing cognitive burden
 
+% TODO
 Gaze-based interaction is enabled by eye tracking technology. In addition to tracking eye position, it analyzes where the user is looking and how long.
 
 Eye tracking could be used to dim the HUD while the user does not look at it. This would decrease distractability, and reduce glare in darker environments.

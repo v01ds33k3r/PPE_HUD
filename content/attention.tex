@@ -1,26 +1,24 @@
 \section{Attention Management}
 
-After understanding the mechanisms of attention, we can now explore how to leverage it. How is it influenced by demanding situations? How do we make information interpretable quickly? How do we capture attention if needed?
+After discussing the mechanisms of perception and attention, the question arises as to how they can be utilized and which aspects need to be taken into consideration in order to do so.
 
-Combining the contents of the previous sections,
+How is it influenced by demanding situations? 
+How do we capture attention if needed?
+% to estimate the requirements for efficient information acquisition in dynamic situations
 
 \subsection{Situation Awareness}
 
-% to estimate the requirements for efficient information acquisition in dynamic situations
-% "Acquiring and maintaining SA becomes increasingly difficult, however, as the complexity and dynamics of the environment increase"
-% "In complex and dynamic environments, attention demands resulting from information overload, complex decision making, and multiple tasks can quickly exceed a person's limited attention capacity"
+% complexity and dynamics of the environment, attention demands resulting from information overload, limited attention capacity
 
 Making good judgements becomes increasingly difficult when performing demanding procedures while trying to maintain awareness of the surrounding area. The risks associated with these activities prohibit human error, further increasing stress levels.
 \textcite{endsleyTheorySituationAwareness1995} highlights the role of situation awareness as a foundation for good decision-making in dynamic situations. She outlines three levels of SA, namely perception, comprehension and projection, of which perception is the most significant for UI design.
 This stage requires collecting the information relevant to the situation. In level 2 this information will be analyzed to form "a holistic picture of the environment, comprehending the significance of objects and events." Finally, likely outcomes can be determined by understanding the dynamics of the situation.
 
-It is evident that situation awareness is therefore related to the processes of attention described in Section \ref{sec:HVS_attention}. Subsequently, this illustrates the necessity of a thorough understanding of the pieces required for achieving good situation awareness to design a well-functioning HUD. The amount of information that can be rapidly and accurately obtained is directly influenced by how it is presented. In addition to prioritizing and organizing that information around task objectives, \textcite{endsleyTheorySituationAwareness1995} mentions the advantage of systems providing processed information rather than the data it is based on (e.g. displaying remaining time based on current oxygen amount and usage). 
+It is evident that situation awareness is therefore related to the processes of attention described in the previous section. Subsequently, this illustrates the necessity of a thorough understanding of the pieces required for achieving good situation awareness to design a well-functioning HUD. The amount of information that can be rapidly and accurately obtained is directly influenced by how it is presented. In addition to prioritizing and organizing that information around task objectives, \textcite{endsleyTheorySituationAwareness1995} mentions the advantage of systems providing processed information rather than the data it is based on (e.g. displaying remaining time based on current oxygen amount and usage). 
 
-Special attention should be paid to reserve highly salient features to critical events that truly necessitate changing the course of action. Further, it is vital to maintain a balance between showing all relevant information, while simultaneously avoiding visual overload. While looking for inaccessible information, other important content may be overlooked. Conversely, "filtering of extraneous information (not related to SA needs) and reduction of data (by processing and integrating low-level data to arrive at SA requirements)" is necessary to prevent clutter. This reiterates the importance of accurately evaluating and prioritizing task-relevant information.
+She emphasizes that special attention should be paid to reserve highly salient features to critical events that truly necessitate changing the course of action. Further, it is vital to maintain a balance between showing all relevant information, while simultaneously avoiding visual overload. While looking for inaccessible information, other important content may be overlooked. Conversely, "filtering of extraneous information (not related to SA needs) and reduction of data (by processing and integrating low-level data to arrive at SA requirements)" is necessary to prevent clutter. This reiterates the importance of accurately evaluating and prioritizing task-relevant information.
 
-Considering these recommendations supports evaluating the interaction of all components, since emphasizing some elements inevitably comes at the expense of others. Assessing the design concept by the amount of situation awareness it provides serves as the last step of ensuring the effectiveness of the system.
-
-% "Cognitive load theory (CLT) is concerned with the design of interfaces that allow users maximize their working memory when problem solving. This includes eliminating any subjective mental load that may be imposed by the instruction interface." DABOR 2019 SIMULT INTERPRETATION
+As \textcite{endsleyTheorySituationAwareness1995} points out, considering these recommendations supports assessment of the interaction of all components as a whole, since emphasizing some elements inevitably comes at the expense of others. Evaluating the design concept by the amount of situation awareness it provides serves as the last step of ensuring the effectiveness of the system.
 
 \subsection{Peripheral Displays and Glanceability}
 
@@ -48,19 +46,19 @@ In the gaze-summon interface, visual targets are placed near the position where 
 
 % Similar to the methods of "Glanceable AR", \textcite{ishiguroPeripheralVisionAnnotation2011} presents a method to show a simple icon that transitions to related information when gazed at.
 
-These methods provide methods to avoid information overload. Aside from these interaction methods there are also design principles to manage this.
-
 % This further ties into context-aware interfaces, which display information based on current task or cognitive load [\cite{rhodesWIMPInterfaceConsidered1998}]. The risk of false positives is unjustifiable in safety-critical environments.
 % context awareness \cite{krevelenSurveyAugmentedReality2010}
 
-\subsection{Information Priority and Visual Hierarchy}
+Glanceability provides an interactive approach to countering information overload. That said, visual elements must also be designed, and in such a way as to draw the user's attention to the relevant information.
 
-to quickly comprehend information, there are two phases: you need to find the information and then interpret it. this is facilitated by two principles, namely prioritizing information and abstracting information.
+\subsection{Capturing Attention}
 
-Prioritizing information prepares it for sorting into a visual hierarchy.
+The rapid processing of information occurs in two steps: locating the information and then interpreting it. this process is facilitated by two guiding principles, which are the prioritization and abstraction of information.
+
+% visual search mechanisms -> HVS
 
 \textcite{shaoHowDynamicInformation2023}
-
+"guide the visual flow and establish the pointing constraints of the user's line of sight"
 
 - "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out. \cite{baldassiPopoutTargetsModulated2004}"
   - "Pop-out is a bottom-up drawing of attention to an object, which occurs when an object within the visual field is distinctive along some visual dimension (for example, possessing a distinctive color or brightness when compared with other objects in the field)." -> POWER OF CONTRAST
@@ -72,8 +70,6 @@ Prioritizing information prepares it for sorting into a visual hierarchy.
 GRAPHIC abstraction as scale of readability <-> unobtrusiveness
 
 Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
-
-\subsection{Capturing Attention}
 
 \cite{matthewsDesigningGlanceablePeripheral2006}
 "Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion."
@@ -90,4 +86,5 @@ e.g. change blind, make aware, interrupt, demand action x size, location, color,
 
 ---
 
+talked about managing attention, what to do once we got it?
 To make information glanceable, concepts of data visualization can be leveraged.
