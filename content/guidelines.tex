@@ -17,7 +17,7 @@ In an emergency, the system must be able to get the user's attention, without hi
 
 \subsection{Color and Contrast}
 
-As mentioned in section \ref{sec:AR}, the use of color is mainly limited by current optical see-through technology. \textcite{gabbardPerceptualColorMatchingMethod2022} advises to prefer colors with high source luminance, since these are less subject to color blending. Further, if a color usually signifies a specific meaning and cannot be guaranteed to be perceived correctly, "designers should instead consider other color(s) that exhibit higher luminance but are still meaningfully interpretable". They specifically mention red as such an example.
+As mentioned in Section \ref{sec:AR}, the use of color is mainly limited by current optical see-through technology. \textcite{gabbardPerceptualColorMatchingMethod2022} advises to prefer colors with high source luminance, since these are less subject to color blending. Further, if a color usually signifies a specific meaning and cannot be guaranteed to be perceived correctly, "designers should instead consider other color(s) that exhibit higher luminance but are still meaningfully interpretable". They specifically mention red as such an example.
 
 The library chroma.js\footnote{\href{https://gka.github.io/chroma.js/\#color-luminance}{chroma.js api docs!}} has a funtion to sort colors by luminance in the RGB color space, based on the Web Content Accessibility Guidelines 2.0.\footnote{\href{https://www.w3.org/TR/2008/REC-WCAG20-20081211/\#relativeluminancedef}{Web Content Accessibility Guidelines (WCAG) 2.0}} Sorting the base colors red (\#FF0000), green (\#00FF00), blue (\#0000FF) and their intermediaries cyan (\#00FFFF), magenta (\#FF00FF), and yellow (\#FFFF00) puts them into the following order (brightest to darkest): yellow, cyan, green, magenta, red, and blue.
 
@@ -33,6 +33,9 @@ The library chroma.js\footnote{\href{https://gka.github.io/chroma.js/\#color-lum
 % https://oklch.com/
 
 Limiting the UI to a single color can ensure that the design works effectively in every respect (e.g., by using motion to draw attention instead of color). This also offers economic benefits, as in scenarios where devices are likely to need replacement due to damage or contamination, acquisition costs should be kept as low as possible. One way to ensure affordability is the usage of a monochrome display. This further avoids impairing users with color blindness.
+
+% Industrial equipment, especially if it might be easily damaged, 
+% technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
 
 \subsection{Typography}
 
@@ -72,16 +75,18 @@ Another reason to prefer shape-based icons is the requirement of thicker line wi
 
 \begin{figure}[hbt]
     \centering
-    % \includegraphics[width=1\textwidth]{assets/icons_line_shape.eps}
+    \includegraphics[width=1\textwidth]{assets/icons_line_shape.eps}
     \caption{Line-based (left) and plane-based (right) icons.}
     \label{fig:icons_hazard}
 \end{figure}
 
-\subsection{Polarity} % OR in HVS
+% \subsection{Polarity} % OR in HVS
+
+% \cite{lindbergEffectIconSpacing2003}
 
 \subsection{Layout and Spacing}
 
-As mentioned in section \ref{sec:HVS_attention}, crowding affects perception the most. It seems advisable to prefer wider spacing between elements. 
+As mentioned in Section \ref{sec:HVS_attention}, crowding affects perception the most. It seems advisable to prefer wider spacing between elements. 
 
 Additionally, the number of components per side should be limited to three at most, anchoring them spatially to the corners and sides of the display and keeping the center of vision free.
 
@@ -122,7 +127,7 @@ Additionally, the number of components per side should be limited to three at mo
 % - "HUD information located less than 8 deg from the out-the-window point of interest can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed"
 % - "Additionally, it was shown that HUD symbology placed in the upper portion of the visual scene (greater than 8 deg from the central focus), led to improved simultaneous processing of the HUD symbology and the forward view." BUT "hypothesized that this difference is rooted in the reduced clutter and background motion found when the HUD overlaid the sky, as opposed to the ground."
 
-\subsection{Attention Management}
+\subsection{Notifications}
 
 Critically examine how information should be handled. Does the user need to be interrupted and does he have to do sth about it?
 
@@ -130,20 +135,6 @@ Dont overdo it with attention-grabbing features, the more contrast to other elem
 
 The billboard style occludes much of reality around the text, which should generally be avoided. However, exactly this feature makes it suitable for high priority notifications.
 
-% \textcite{matthewsToolkitManagingUser2004} mention three ascpects of attention management in their "Peripheral Displays Toolkit": abstracting information to make it glanceable (see GLANCEABILITY concept), assigning notification levels to information and designing (visual) and transitions between those levels.
+Information overload
 
-% Abstraction of Information
-
-% optimal information density: shows all relevant information without over whelming the user
-
-% GRAPHIC abstraction as scale of readability <-> unobtrusiveness
-
-% Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
-
-\subsection{Technical}
-
-%Eye tracking could be used to dim the HUD while the user does not look at it. This would decrease distractability, and reduce glare in darker environments.
-
-
-% Industrial equipment, especially if it might be easily damaged, 
-%technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
+% To avoid the user needing to remember in which direction the information was placed, this information could be anchored by representative icons. Or the primary information which hides related information (e.g. task list that shows current and a limited amount of next steps, that displays the complete list when accessed)

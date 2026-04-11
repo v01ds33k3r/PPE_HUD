@@ -1,7 +1,7 @@
 \section{Conceptualization}
 \label{sec:concept}
 
-%The following design will use white, since it is the best visible color on an optical see-though display. If color is applicable, yellow will be used as accent color, reserved for notifications, to heighten the contrast with the standard mode.
+\emph{For printing, the color of the designs was inverted to black on white. A UI example in original colors is included as Figure \ref{}}
 
 \subsection{Relevant Parameters}
 
@@ -39,7 +39,7 @@ Since the oxygen value is the crucial factor whether or not to continue work, th
 
 Since mechanical gauges with a pointer show visual progress by default, a radial version of the component was included.
 % Additionally, the component takes up grid space shaped more as a square, which offers different layout options. 
-However, as mentioned in section \ref{sec:datavis}, linear design enable much quicker parsing of the information. Compared to the linear version, it also takes up much more space to make the information readable.
+However, as mentioned in Section \ref{sec:datavis}, linear design enable much quicker parsing of the information. Compared to the linear version, it also takes up much more space to make the information readable.
 
 \begin{figure}[hbt]
     \centering
@@ -55,14 +55,14 @@ Additionally, the status bar was divided into quarter segments, enabling more ac
 
 \begin{figure}[hbt]
     \centering
-    % \includegraphics[width=1\textwidth]{assets/oxy_horizontal.eps}
+    \includegraphics[width=1\textwidth]{assets/oxy_horizontal.eps}
     \caption{The modified status bar and the following segmentation.}
     \label{fig:oxy_segment}
 \end{figure}
 
 Depending on available screen space and layout configuration, a vertical version of the component might be needed in addition to the horizontal one. 
 
-Grouping the label and value on one side saves space (left and middle of figure \ref{fig:oxy_vertical}). Aligning them at the top and bottom respectively accounts for visual crowding, making the value more distinctive.
+Grouping the label and value on one side saves space (left and middle of Figure \ref{fig:oxy_vertical}). Aligning them at the top and bottom respectively accounts for visual crowding, making the value more distinctive.
 The oxygen value is located so that the status bar is seen first, i.e. if the component is placed on the left side, the bar will be on the right to maintain an optical guide.
 
 % - time left w/ current breathing rate
@@ -117,8 +117,8 @@ The icons are placed close together so that they are visible at the same angle i
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.5\textwidth]{assets/icons_hazard.eps}
-    \caption{Example notification with billboard style.}
+    \includegraphics[width=0.8\textwidth]{assets/icons_hazard.eps}
+    \caption{Hazard indicator icons.}
     \label{fig:notif}
 \end{figure}
 
@@ -153,7 +153,10 @@ The icon to the right is an anchor for possible gaze-based interaction, in this 
 
 \emph{Note: the following illustrations are not to scale.}
 
-The maximum variant of the interface was designed with full functionality in mind, based on Microsoft's HoloLens 2. It features a horizontal field of view of 43°, a resolution of 1440 by 936 pixels per eye, and provides full color availability (within the technical limits mentioned in section \ref{sec:AR}).
+%The following design will use white, since it is the best visible color on an optical see-though display. If color is applicable, yellow will be used as accent color, reserved for notifications, to heighten the contrast with the standard mode.
+
+
+The maximum variant of the interface was designed with full functionality in mind, based on Microsoft's HoloLens 2. It features a horizontal field of view of 43°, a resolution of 1440 by 936 pixels per eye, and provides full color availability (within the technical limits mentioned in Section \ref{sec:AR}).
 
 \begin{figure}[hbt]
     \centering
@@ -186,7 +189,7 @@ One could argue that some overlap of the components would be useful to make bett
 
 \begin{figure}[hbt]
     \centering
-    % \includegraphics[width=1\textwidth]{assets/HUD_size.eps}
+    \includegraphics[width=1\textwidth]{assets/HUD_size.eps}
     \caption{Size comparison of the Microsoft HoloLens 2 and the Google Glass Enterprise Edition 2.}
     \label{fig:HUD_size}
 \end{figure}

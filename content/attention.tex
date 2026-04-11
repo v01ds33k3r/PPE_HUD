@@ -1,24 +1,20 @@
 \section{Attention Management}
 
-% habituation: less attention to any stimulus that occurs frequently
+After understanding the mechanisms of attention, we can now explore how to leverage it. How is it influenced by demanding situations? How do we make information interpretable quickly? How do we capture attention if needed?
 
-%There are two ways in which an object can be focused: bottom-up and top-down. 
-Bottom-up attention occurs subconsciously, triggered by outside stimuli. In the top-down process, the brain directs the eyes toward a consciously selected object. Interestingly, top-down attention lessens the effect of distracting stimuli when concentrating on a target [\cite{connorVisualAttentionBottomUp2004}].
-
-When multiple stimuli compete for attention, even salient targets might be ignored if they are irrelevant to the current goal. This is referred to as inattentional blindness [\cite{jensenChangeBlindnessInattentional2011}]. \textcite{caterSelectiveQualityRendering2002} leverages this effect to only render parts of frames in high-quality around the current fixation point.
+Combining the contents of the previous sections,
 
 \subsection{Situation Awareness}
 
-The concept of situation awareness provides context for the visualizations.
 % to estimate the requirements for efficient information acquisition in dynamic situations
 % "Acquiring and maintaining SA becomes increasingly difficult, however, as the complexity and dynamics of the environment increase"
 % "In complex and dynamic environments, attention demands resulting from information overload, complex decision making, and multiple tasks can quickly exceed a person's limited attention capacity"
 
 Making good judgements becomes increasingly difficult when performing demanding procedures while trying to maintain awareness of the surrounding area. The risks associated with these activities prohibit human error, further increasing stress levels.
-\textcite{endsleyTheorySituationAwareness1995} highlights the role of situation awareness as a foundation for good decision-making in dynamic situations. She outlines three levels of SA, namely perception, comprehension and projection, of which perception is the most significant for UI design. 
+\textcite{endsleyTheorySituationAwareness1995} highlights the role of situation awareness as a foundation for good decision-making in dynamic situations. She outlines three levels of SA, namely perception, comprehension and projection, of which perception is the most significant for UI design.
 This stage requires collecting the information relevant to the situation. In level 2 this information will be analyzed to form "a holistic picture of the environment, comprehending the significance of objects and events." Finally, likely outcomes can be determined by understanding the dynamics of the situation.
 
-It is evident that situation awareness is therefore dependent on the processes of attention described in section \ref{sec:HVS_attention}. Subsequently, this illustrates the necessity of a thorough understanding of the pieces required for achieving good situation awareness to design a well-functioning HUD. The amount of information that can be rapidly and accurately obtained is directly influenced by how it is presented. In addition to prioritizing and organizing that information around task objectives, \textcite{endsleyTheorySituationAwareness1995} mentions the advantage of systems providing processed information rather than the data it is based on (e.g. displaying remaining time based on current oxygen amount and usage). 
+It is evident that situation awareness is therefore related to the processes of attention described in Section \ref{sec:HVS_attention}. Subsequently, this illustrates the necessity of a thorough understanding of the pieces required for achieving good situation awareness to design a well-functioning HUD. The amount of information that can be rapidly and accurately obtained is directly influenced by how it is presented. In addition to prioritizing and organizing that information around task objectives, \textcite{endsleyTheorySituationAwareness1995} mentions the advantage of systems providing processed information rather than the data it is based on (e.g. displaying remaining time based on current oxygen amount and usage). 
 
 Special attention should be paid to reserve highly salient features to critical events that truly necessitate changing the course of action. Further, it is vital to maintain a balance between showing all relevant information, while simultaneously avoiding visual overload. While looking for inaccessible information, other important content may be overlooked. Conversely, "filtering of extraneous information (not related to SA needs) and reduction of data (by processing and integrating low-level data to arrive at SA requirements)" is necessary to prevent clutter. This reiterates the importance of accurately evaluating and prioritizing task-relevant information.
 
@@ -28,76 +24,70 @@ Considering these recommendations supports evaluating the interaction of all com
 
 \subsection{Peripheral Displays and Glanceability}
 
-A peripheral display keeps information related to a primary task available.
-On the other hand, so-called notification displays are meant to prompt action, actually interrupting the user. A peripheral display offers the choice of whether or not to continue the current action [\cite{matthewsDefiningDesigningEvaluating2005}].
-
-Glanceable information means it can be comprehended quickly and easily once it is paid attention to [\cite{matthewsDesigningGlanceablePeripheral2006}].
-% - "Glanceability is critical to peripheral display design because users need to quickly glance at and read displayed information with minimal interruption to their primary task."
-
-% ACHIEVING GLANCEABILITY
-% - "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out. \cite{baldassiPopoutTargetsModulated2004}"
-%   - "Pop-out is a bottom-up drawing of attention to an object, which occurs when an object within the visual field is distinctive along some visual dimension (for example, possessing a distinctive color or brightness when compared with other objects in the field)." -> POWER OF CONTRAST
-
-% - "If visual features are to be used successfully in glanceable displays, they will need to balance distinctiveness with too much demand for attention."
-% - variables were used to distinguish between versions of otherwise the same items (e.g. email categories of notifications)
+The requirements of situation awareness make clear that information has to be quickly accessible, without straining cognitive capacity or being overly distracting.
+Peripheral displays do just that—keeping relevant information accessible while offering the choice of whether or not to continue with the current task [\cite{matthewsDefiningDesigningEvaluating2005}].
+On the other hand, so-called notification displays actively interrupt the user to prompt necessary action. 
 
 % \cite{birnholtzAwarenessDesktopExploring2010} peripheral displays
 
-Glanceability is directly impacted by the displayed amount of items, their salience, etc.—i.e. the attentional limits described in section \ref{sec:HVS_attention}.
-% by the displayed "amount and type of information [\cite{matthewsDesigningGlanceablePeripheral2006}], .
+Building onto this categorization, \textcite{matthewsDesigningGlanceablePeripheral2006} introduces the concept of glanceability—a term used to describe information that is quickly and easily comprehended once it is paid attention to.
+Glanceability is directly impacted by the displayed amount of items, their salience, etc.—i.e. the attentional limits described in Section \ref{sec:HVS_attention}. In this context, \textcite{matthewsDesigningGlanceablePeripheral2006} emphasizes that visual components need to "balance distinctiveness with too much demand for attention."
 
-Interpreting a display of one piece of information will be much easier than interpreting a display of many bits of information. Also affecting glaceability are design elements such as color, shape, position, size, and contrast, which are used to represent information in a variety of ways.
-% Would be helpful for secondary information [DEFINE secondary info]. To avoid the user needing to remember in which direction the information was placed, this information could be anchored by representative icons. Or the primary information which hides related information (e.g. task list that shows current and a limited amount of next steps, that displays the complete list when accessed)
+\textcite{luGlanceableAREvaluating2020} note that to design effective glanceable displays, it is necessary to consider both the visual presentation of information and how it is accessed. They present two novel concepts for hands-free interaction that implement the principles of glanceability and compare their performance to a regular HUD. Participants in the study were asked to follow a virtual mannequin at a specified distance for the primary task, while being asked questions about the information shown on the display.
 
-% HUD BEHAVIOR
-Instead of showing the interface at all times, its elements could be positioned outside of the HMD's field of view, accessible by turning the head in that direction. This is the core idea of "Glanceable AR".
+The eye-glance interface corresponds to a conventional HUD, in which elements are fixed at the edges of the display's field of view. Although continuously displaying the information makes it easily accessible, it can lead to information overload or otherwise be distracting. Additionally, restricting the peripheral field of view can impair perception in that area.
 
-\textcite{luGlanceableAREvaluating2020} proposes two concepts to achieve this, comparing it with a typical 2D HUD.
+The visual components of the head-glance interface are placed just outside the display's field of view and are accessed by turning the head. Without this movement, the elements are not visible at all. This approach requires an additional sensor to track the head movement relative to the position of the body.
+According to \textcite{luGlanceableAREvaluating2020}, the interface caused frustration among the participants. However, they theorize that this was due to the frequency of the questions asked, which led to numerous head movements within a short amount of time. In addition, participants found it mentally taxing to remember the location of specific information.
 
-\textbf{Head-Glance.} Interface components are placed just outside the display's field of view and are accessed turning the head. This approach requires an additional sensor for the position of the body, so the head movement can be tracked in relation to the body.
+In the gaze-summon interface, visual targets are placed near the position where the interface elements would be located. If these points are fixated for a certain amount of time, the information appears at that location. However, in industrial environments this delay may not be justifiable in the intended applications. Additionally, \textcite{luGlanceableAREvaluating2020} report that keeping the gaze on target might lead to eye strain if the display is used frequently. There was also an increase of false positives when participants took a turn, caused by reflexively looking into the intended direction, combined with eye-tracking jitter from the rapid head movement.
 
-\textbf{Gaze-Summon.} Here, anchors are placed near the position of where the elements would be placed. If this point is fixated for a certain amount of time, the information will appear in its stead.
-
-
-
-% LU 2020, 2023
-% - "designing glanceable interfaces requires careful consideration not only about how to present information visually, but also about how to access the information effectively"
-% \textcite{luGlanceableAREvaluating2020} proposes four design principles: "DP1. Virtual content should be fixed to the user. DP2. Virtual content should be spatially distributed in the periphery. DP3. The interaction to access virtual content should be hands-free. DP4. Information should be accessed by glancing quickly at the periphery."
-% - voice input: disturbs others in public, HERE: radio comms, loud industrial env
-% - "we define “periphery” as the space at the edges of or beyond the field of view (FoV) of the AR display"
-% - eye-glance interface (HUD)
-% 	- baseline, does not require sensors or trackers
-% 	- "benefits of information being highly visible and accessible, but it may also be obtrusive, occlude the real world, and cause the problem of information overload"
-% 	- always-there information might interfere with peripheral awareness
-% - head-glance
-% 	- content outside FOV, fixed to body, turn head to access -> clear view
-% 	- requires to look away from forward FOV momentarily, impacted performance of primary task in study (keeping a specified distance to virtual human when walking)
-% 		- HYPO might be problematic when moving quickly (emergency)
-% 	- mental demand higher in study, possibly because of
-% 		- frequency of information access, leading to a lot of extra head movement avoidable by other methods
-% 		- need to remember location of information
-% - gaze-summon (look at indicator for 0.5 sec to display information)
-% 	- additional time needed to access information results in unusability for industrial use case
-% 	- possible eye strain from keeping gaze on target
-% 	- increase of false positives when participants took a turn (reflex to look into intended direction + eye-tracking jitter from quick head movements)
-% \textcite{luGlanceableAREvaluating2020} mentions the display being less impactful when participants concentrated on the primary task. CONCENTRATION LEVEL?
+% LU 2020
+% - mentions the display being less impactful when participants concentrated on the primary task.
 % - CON primary task of walking not comparable to task with high cognitive load + physical demands
 
-% \textcite{ishiguroPeripheralVisionAnnotation2011} presented a method to show a simple icon that transitions to related information when gazed at.
+% Similar to the methods of "Glanceable AR", \textcite{ishiguroPeripheralVisionAnnotation2011} presents a method to show a simple icon that transitions to related information when gazed at.
 
-% **passive/ambient/top-down**
-% By default, the display just shows necessary information. This mode is designed to not get the user's attention so they can focus on their primary task. Another reason to avoid color and movement here is to have the maximum contrast possible if the user needs to get notified of something.
+These methods provide methods to avoid information overload. Aside from these interaction methods there are also design principles to manage this.
 
-% INTERRUPTION
-% - "Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion." \cite{matthewsDefiningDesigningEvaluating2005}
-% Notification levels equal importance of information, corresponding to action priority (in HUD case)
-% TABLE notification level and corresponding design choices + elements
-% e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
-
-% **interruption/active/notification/bottom-up/**
-% \cite{janakaNotiFadeMinimizingOHMD2023} getting attention without harshly interrupting primary task
-% \cite{salisburyAttentionChangesHeadWorn2024}
-% \cite{chewarUnpackingCriticalParameters2004} IRC framework (interruption, reaction, comprehension)
-
-This further ties into context-aware interfaces, which display information based on current task or cognitive load \cite{rhodesWIMPInterfaceConsidered1998}. The risk of false positives is unjustifiable in safety-critical environments.
+% This further ties into context-aware interfaces, which display information based on current task or cognitive load [\cite{rhodesWIMPInterfaceConsidered1998}]. The risk of false positives is unjustifiable in safety-critical environments.
 % context awareness \cite{krevelenSurveyAugmentedReality2010}
+
+\subsection{Information Priority and Visual Hierarchy}
+
+to quickly comprehend information, there are two phases: you need to find the information and then interpret it. this is facilitated by two principles, namely prioritizing information and abstracting information.
+
+Prioritizing information prepares it for sorting into a visual hierarchy.
+
+\textcite{shaoHowDynamicInformation2023}
+
+
+- "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out. \cite{baldassiPopoutTargetsModulated2004}"
+  - "Pop-out is a bottom-up drawing of attention to an object, which occurs when an object within the visual field is distinctive along some visual dimension (for example, possessing a distinctive color or brightness when compared with other objects in the field)." -> POWER OF CONTRAST
+
+
+\textcite{matthewsToolkitManagingUser2004} mention three aspects of attention management in their "Peripheral Displays Toolkit": abstracting information to make it glanceable (see GLANCEABILITY concept), assigning notification levels to information and designing (visual) and transitions between those levels.
+
+
+GRAPHIC abstraction as scale of readability <-> unobtrusiveness
+
+Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
+
+\subsection{Capturing Attention}
+
+\cite{matthewsDesigningGlanceablePeripheral2006}
+"Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion."
+
+habituation: less attention to any stimulus that occurs frequently
+
+\cite{janakaNotiFadeMinimizingOHMD2023} getting attention without harshly interrupting primary task
+\cite{salisburyAttentionChangesHeadWorn2024}
+\cite{chewarUnpackingCriticalParameters2004} IRC framework (interruption, reaction, comprehension)
+
+Notification levels equal importance of information, corresponding to action priority (in HUD case)
+TABLE notification level and corresponding design choices + elements
+e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
+
+---
+
+To make information glanceable, concepts of data visualization can be leveraged.

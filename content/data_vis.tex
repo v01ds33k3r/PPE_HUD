@@ -2,11 +2,11 @@
 \label{sec:datavis}
 
 % extracting information out of data
-% Expanding general design foundations with some aspects of data visualization can still improve the quality of such status displays.
 
-% Visualizating data transforms it into information. Data itself is just noise, whereas information holds value. In what way data needs to be transformed is determined by context [\cite{terganKnowledgeInformationVisualization2005}].
+The aim of data visualization is to make large datasets understandable.
+Visualizating data transforms it into information. Data itself is just noise, whereas information holds value. In what way data needs to be transformed is determined by context [\cite{terganKnowledgeInformationVisualization2005}].
 
-The aim of data visualization is to make large datasets understandable. Aside from design fundamentals, most specialized resources discuss visualization types intended for interrelated data. Interpreting such complex information requires time and cognitive capacity unavailable in scenarios such as those mentioned in section \ref{sec:CPC}. In these situations, a clear picture of the current status must be available at all times, which only allows for individual data values and limits the number of possible visualization types.
+Aside from design fundamentals, most specialized resources discuss visualization types intended for interrelated data. Interpreting such complex information requires time and cognitive capacity unavailable in scenarios such as those mentioned in Section \ref{sec:CPC}. In these situations, a clear picture of the current status must be available at all times, which only allows for individual data values and therefore limits the number of possible visualization types.
 
 Ferdio, an agency specialized on infographics and data visualization, has created a library of visualization types\footnote{\href{https://datavizproject.com/}{Data Viz Project | Collection of data visualizations to get inspired and find the right type}}. In this library, out of a 166 options, nine are for single data.
 
@@ -18,14 +18,13 @@ Ferdio, an agency specialized on infographics and data visualization, has create
 \end{figure}
 
 %Visual variables correspond to the fundamental design elements
-\textcite{wilke2VisualizingData2019} lists position, shape, size and color as basic elements for visualization. Position describes the placement of data, related to other points or axes of a diagram. For color hue and value should be distinguished, since they are suited for different kinds of data. Hues tend to work better for distinctive categories. Value for continuous data GRADIENTS, the eye is much more sensitive to differences in lightness (see section \ref{sec:HVS_attention}).
+\textcite{wilke2VisualizingData2019} lists position, shape, size and color as basic elements for visualization. Position describes the placement of data, related to other points or axes of a diagram. For color, hue and value should be distinguished, since they are suited for different kinds of data. Hues tend to work better for distinctive categories. Value for continuous data GRADIENTS, the eye is much more sensitive to differences in lightness (see Section \ref{sec:HVS_attention}).
 Hues can also be used for gradients (e.g. rainbow), but require much more intention to work.
 
 % Purposes of color to convey information are grouping or relationships. Grouping is necessary for the HUD, but is managed by the spatial location of and the spacing between elements.
 % visual encoding of information: encoding works by highlighting differences (e.g. if a monochrome display is green, the color green holds no meaning)
 
-Each of these elements can be used to encode information. Which element is used for which information influences the type of visualization. Importantly, this mapping must be unique, else it becomes ambiguous, muddling the meaning [\cite{wilke2VisualizingData2019}].
-
+Each of these elements can be used to encode information. Which element is used for which information influences the type of visualization. Importantly, this mapping must be unique, else it becomes ambiguous and obscures the meaning [\cite{wilke2VisualizingData2019}].
 
 % \cite{behrischQualityMetricsInformation2018}
 % - fig 3: metrics categorized by cognitive complexity
@@ -34,7 +33,7 @@ Each of these elements can be used to encode information. Which element is used 
 % - visual patterns to intuitively understand mathematical patterns
 % - signal-to-noise ratio
 
-\subsection{Visualizations for Single Value Data}
+\subsection*{Visualizations for Single Value Data}
 
 \textbf{Icons and Scaled-up Numbers.}
 highlight a single value
@@ -43,7 +42,8 @@ icons serve as description or label
 
 \textbf{Differential Indicators.}
 
-These are a type of status indicator, and meant to visualize changes of information.
+These are a type of status indicator, and meant to visualize changes of information. arrows
+stock values, red green
 
 \textbf{Solid and Angular Gauges.}
 solid necessarily show specific data/numbers, more for abstract status evaluation
@@ -54,4 +54,3 @@ According to \textcite{xiaVisualizingWristImpact2025}, bar charts outperform rad
 
 \textbf{Status Bar.}
 A progress bar is a graphical control element used to visualize the progression of an extended operation, such as a download, file transfer, or installation. Sometimes, the graphic is accompanied by a textual representation of the progress in a percent or quantitative format.
-
