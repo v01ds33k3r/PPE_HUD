@@ -18,6 +18,7 @@ Augmented reality (AR) is a subcategory of extended reality (XR), alongside mixe
 Head-up displays (HUDs) overlay information onto reality in the user's line of sight, allowing them to access necessary information without having to look away from their primary task.
 Originally used in military aircraft, today HUDs are installed into consumer vehicles as well. In addition to these integrated HUDs, content can be presented on a head-mounted display. In this case, the display is attached to the head, typically as a helmet or glasses, enabling mobile usage. In contrast to the above definition by \textcite{azumaSurveyAugmentedReality1997}, the content displayed on a HUD is two-dimensional and head-stabilized, rather than spatially anchored, i.e., world-stabilized (see Figure \ref{fig:XR_layers}). Strictly speaking, a HUD therefore does not meet the criteria for AR. However, other research considers head-stabilized presentation of content as suitable for augmented reality [\cite{feinerWindowsWorld2D1993}, \cite{luGlanceableAREvaluating2020}].
 
+\textcite{linFindingOptimumPosition2021} actually mention a few more advantages:
 % The most important feature of head-stabilized content is that it is consistently found in the same location.
 % World-stabilized elements are helpful for exploring and better for immersion.
 % When the needed information is unrelated to the environment, head-stabilized display might be better.
@@ -47,7 +48,7 @@ There are two approaches to combining virtual content with reality. With video s
 
 Since video see-through displays completely block the view of the outside world, it is impossible to see anything in the event of a failure. Given the intended use cases, this represents a major safety issue, especially since the headset cannot be removed while wearing a fully encapsulating suit.
 
-% TODO transition rest of section
+% TODO transition rest of section, too choppy
 \textcite{syberfeldtAugmentedRealitySmart2017} recommends a field of view of at least 30° for industrial applications. Microsoft's HoloLens 2 features a 43° by 29° field of view, while a few other systems offer around 40°.\footnote{\href{https://vr-compare.com/ar}{Compare all AR Headsets \& Glasses - VRcompare}}
 
 As with all head-mounted devices, walking causes them to shake, which affects legibility [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down motion.
@@ -70,7 +71,7 @@ As a hardware-independent solution, \cite{tanakaInformationLayoutMethod2008} pro
 
 In the additive color model, the combination of all wavelengths of light produce white, while black is created by the absence of light. When physical screens display black, the corresponding pixels do not emit light, so the actual color of the display material is visible. Since OHMDs do not have a physical screen, "black" is transparent [\cite{gabbardColorBlendingOutdoor2013}]. This also means that darker colors are not available for design on OHMDs, as they are mostly translucent. Additionally, the level of transparency affects the extent to which the background distorts the color [\cite{itohIndistinguishableAugmentedReality2021}].
 
-% TODO gabbard findings
+\textcite{gabbardColorBlendingOutdoor2013} additionally found that, depending on the background, colors may shift in hue or washout due to their luminance value and/or chromaticity. Both of these effects result in colors potentially being misinterpretated or not being visible at all.
 
 % Both the decreased contrast and the color blending can be avoided with retinal \cite{krevelenSurveyAugmentedReality2010}
 % Retinal projection technology does not have limitations on FOV, but is still in development.

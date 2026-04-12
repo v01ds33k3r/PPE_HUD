@@ -1,15 +1,9 @@
 \section{Design Guidelines}
 \label{sec:guidelines}
 
-The following sections summarize the scenario requirements, technical limitations and human factors.
+To facilitate situation awareness, the HUD should show as much information as possible without causing fatigue or sensory overload. The displayed information should be comprehensible in as short a time as possible. In an emergency, the system must be able to get the user's attention, without hindering decision-making or interrupting the primary task completely.
 
-% The following design guidelines are tailored to ensure the best visibility and information acquisition possible.
-
-Ideally, the HUD shows as much information as possible without limiting situation awareness, causing fatigue or sensory overload. The displayed information should be comprehensible in as short a time as possible.
-
-In an emergency, the system must be able to get the user's attention, without hindering decision-making or interrupting the primary task completely.
-
-%Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
+% Some design fundamentals can be ignored, since the HUD will be worn by trained users.
 
 % novice vs expert users
 % users are/will be trained with equipment -> able to forego certain design principles
@@ -17,7 +11,7 @@ In an emergency, the system must be able to get the user's attention, without hi
 
 \subsection{Color and Contrast}
 
-As mentioned in Section \ref{sec:AR}, the use of color is mainly limited by current optical see-through technology. \textcite{gabbardPerceptualColorMatchingMethod2022} advises to prefer colors with high source luminance, since these are less subject to color blending. Further, if a color usually signifies a specific meaning and cannot be guaranteed to be perceived correctly, "designers should instead consider other color(s) that exhibit higher luminance but are still meaningfully interpretable". They specifically mention red as such an example.
+As mentioned in Section \ref{sec:AR}, the use of colors in HMDs intended for daylight use is primarily limited by current optical see-through technology. \textcite{gabbardPerceptualColorMatchingMethod2022} recommend to prefer colors with high source luminance, as these are less prone to color shifts. Furthermore, if a color typically represents a specific meaning and cannot be guaranteed to be perceived correctly, alternative colors that can meaningfully convey that message should be considered. Red is specifically cited as an example, as it is highly susceptible to color shifts due to its low luminance.
 
 The library chroma.js\footnote{\href{https://gka.github.io/chroma.js/\#color-luminance}{chroma.js api docs!}} has a funtion to sort colors by luminance in the RGB color space, based on the Web Content Accessibility Guidelines 2.0.\footnote{\href{https://www.w3.org/TR/2008/REC-WCAG20-20081211/\#relativeluminancedef}{Web Content Accessibility Guidelines (WCAG) 2.0}} Sorting the base colors red (\#FF0000), green (\#00FF00), blue (\#0000FF) and their intermediaries cyan (\#00FFFF), magenta (\#FF00FF), and yellow (\#FFFF00) puts them into the following order (brightest to darkest): yellow, cyan, green, magenta, red, and blue.
 
@@ -28,14 +22,8 @@ The library chroma.js\footnote{\href{https://gka.github.io/chroma.js/\#color-lum
     \label{fig:colors_sorted}
 \end{figure}
 
-% These results can be confirmed via the OKLCH 3D model as well: input constant, high lightness and any hue, chroma peaks are yellow, green, cyan. Full chroma is needed to avoid colors blending together.
-
-% https://oklch.com/
-
-Limiting the UI to a single color can ensure that the design works effectively in every respect (e.g., by using motion to draw attention instead of color). This also offers economic benefits, as in scenarios where devices are likely to need replacement due to damage or contamination, acquisition costs should be kept as low as possible. One way to ensure affordability is the usage of a monochrome display. This further avoids impairing users with color blindness.
-
-% Industrial equipment, especially if it might be easily damaged, 
-% technology for augmented reality gets more expensive with either bigger field of view or better color rendering.
+Limiting the UI to a single color can ensure that the design functions effectively in every respect (e.g., by using motion to draw attention rather than color). Not encoding information through colors also avoids potential semantic misinterpretations that could be caused by the previously mentioned color issues.
+In addition, monochrome displays are more affordable and therefore offer economic advantages, since replacement costs should be kept as low as possible in cases where equipment may be damaged or contaminated.
 
 \subsection{Typography}
 
@@ -43,12 +31,14 @@ Limiting the UI to a single color can ensure that the design works effectively i
 
 Aside from screen shake, reading performance is impacted by lighting and background texture, reiterating the importance of proper contrast.
 
-To find requirements for font size, \textcite{renkewitzOptimalFontSize2008} tested to what extent background font colors affect text recognition. They set a benchmark of two seconds as threshold for fast recognition, which resulted in recommended font sizes from 23 to 42 pt, depending on color and background. However, these numbers might have to be adjusted for an OST-HMD, since they used a video see-through system, and red and blue as colors, both colors with lower luminance.
+To find requirements for font size, \textcite{renkewitzOptimalFontSize2008} tested to what extent the background and font colors affect text recognition. They set a benchmark of two seconds as threshold for fast recognition, which resulted in recommended font sizes from 23 to 42 pt, depending on color and background. However, these numbers may have to be adjusted for an OHMD, since they used a video see-through system, and red and blue as colors, both colors with lower luminance.
 
-As explained in \ref{sec:AR}, thinner lines disappear when the HMD moves.
+As mentioned in Section \ref{sec:AR}, thinner lines tend to disappear due to screen shake.
 \textcite{matsuuraReadabilityLegibilityFonts2019} confirm that heavier font weights improve readability. Naturally, the same requirements exist for stroke width.
 
-For example, the typeface "Inter" fits the requirements well. It has a uniform thickness of strokes, a square letter form and good spacing between its lines.
+As example, the typeface "Inter" fits the requirements well. It has a uniform thickness of strokes, a square letter form and good spacing between its lines.
+
+% GRAPHIC comparison inter and an unsuitable typeface
 
 % \begin{figure}[hbt]
 %     \centering
@@ -59,17 +49,12 @@ For example, the typeface "Inter" fits the requirements well. It has a uniform t
 
 \subsection{Iconography}
 
-% "Well-designed graphical icons can achieve such positive effects as drawing users’ attention, shortening search time, reducing operational errors, and relieving users’ burden." \cite{linStudyRelationshipsDifferent2016}
-
-% Needed information is found quicker when presented as graphical content.
-% Icons can utilize small screen estate more efficently.
-
+% capture attention, thus decreasing search time
 % - amount of coded information
 
-\textcite{janakaCanIconsOutperform2023} tested if, and under which conditions icons perform better than text.
-Icon-augmented notifications enabled significantly higher primary task performance than text only and reduced the level of interruption while maintaining reaction and comprehension. They also found icons are more comprehensible when task complexity increased or demanded more attention. The notification were "easier to perceive in suboptimal conditions", including outdoors when walking.
+\textcite{janakaCanIconsOutperform2023} tested if, and under which conditions icons perform better than text. They found that icon-augmented notifications enabled significantly higher primary task performance than text only and reduced the level of interruption while maintaining reaction and comprehension. They also found icons are more comprehensible when task complexity increased or demanded more attention. Additionally, the notification were "easier to perceive in suboptimal conditions", including outdoors when walking.
 
-Naturally, this requires the icons to be well-designed. To that end, \textcite{linStudyRelationshipsDifferent2016} tested versions of icons against each other. The differences tested were polarity, plane- and shape-based, and outline or not. Since line-based icons dissect the space more often, adding visual complexity, which lowers recognition performance. Additionally, white on black icons performed best. 
+Naturally, this requires the icons to be well-designed. To that end, \textcite{linStudyRelationshipsDifferent2016} tested versions of icons against each other. The differences tested were polarity, plane- and shape-based, and the presence or absence of borders. Since line-based icons dissect the space more frequently, they increase visual complexity, which impairs recognition performance. Overall, white icons on black background performed best.
 
 Another reason to prefer shape-based icons is the requirement of thicker line widths which might impact an icon's readability. Simpler icons with varied silhouettes offset this.
 
@@ -80,52 +65,45 @@ Another reason to prefer shape-based icons is the requirement of thicker line wi
     \label{fig:icons_hazard}
 \end{figure}
 
+% Icons can utilize small screen estate more efficently.
 % \subsection{Polarity} % OR in HVS
 
 % \cite{lindbergEffectIconSpacing2003}
 
 \subsection{Layout and Spacing}
 
-As mentioned in Section \ref{sec:HVS_attention}, crowding affects perception the most. It seems advisable to prefer wider spacing between elements. 
+The ability of (binocular) head-mounted displays to display content anywhere in the field of view always entails a trade-off between immediate information access and an unobstructed central line of sight. In use cases involving a great deal of physical activity, a clear field of view should of course be given greater priority.
 
-Additionally, the number of components per side should be limited to three at most, anchoring them spatially to the corners and sides of the display and keeping the center of vision free.
+\textcite{chuaPositioningGlassInvestigating2016} investigated the positioning of content on a monocular OST-HMD worn in front of the right eye. The display was divided into a 3 $\times$ 3 grid, spanning 12.5° vertically and 17° horizontally in both directions from the center.
+The top and most peripheral positions were found to be more comfortable and unobtrusive, although middle and bottom center positions were noticed quicker. 
+The center-right is recommended as best balance between both usability and comfort.
+They mention that the ideal display position is highly dependent on task requirements (e.g., center is better when driving, secondary information better in peripheral).
 
-% -> lower center seems good \cite{katsuyamaEffectsVisualDisplay1989}
+% \cite{ishiguroPeripheralVisionAnnotation2011}: illustration perceivable angles of color, shapes, text
 
-% \cite{chuaPositioningGlassInvestigating2016}
-% - ! monocular OST-HMD
-% - middle + bottom center positions were noticed quicker
-% - top + peripheral positions were more comfortable, unobtrusive
-% - center-right is mentioned as best balance between usability + comfort
+\textcite{linFindingOptimumPosition2021} divide HMD applications into four task categories: single (continuously focusing on display), alternating (switching back and forth between display and reality), background (passively monitoring the display for notifications) and dual (displayed information supplements physical primary task, e.g., captions).
+Similar to \textcite{chuaPositioningGlassInvestigating2016}, they mention that optimal positioning depends on task type.
+Participants preferred 5.4° to 14.6° horizontally, farther out was uncomfortable.
 
-% \cite{katsuyamaEffectsVisualDisplay1989}
-% - studied task requiring frequent eye shifts
-% - (1) displays located 15° below a primary viewing area are better perceived than identical displays located 15° above
-% - (2) ratings of discomfort involved in eye movements (necessitated by the viewing of physically separated displays) correspond to their performances on the secondary task
-% - task performance decreases the further the distance from center
+Ultimately, "there may be an ideal, general purpose HWD position between 8 to 20° temporally offset from line-of-sight. Horizontal FOV would thus be 12°."
+% - "the bottom-center position could be inferior in situations in which users have to look at their feet such as stairs mobility and rough terrain maneuvering."
+% - "A bottom-right display could also interfere with tasks involving the hands."
 
-% \cite{kimInfluencesAugmentedReality2019}
-% - tasks that require referencing information
+\textcite{dowellEffectVisualLocation2002} mention 8° around the line of sight should be kept free, since it "can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed."
+% - "Additionally, it was shown that HUD symbology placed in the upper portion of the visual scene (greater than 8 deg from the central focus), led to improved simultaneous processing of the HUD symbology and the forward view." BUT "hypothesized that this difference is rooted in the reduced clutter and background motion found when the HUD overlaid the sky, as opposed to the ground."
+
+Crowding (see Section \ref{sec:HVS_attention}) affects perception the most. It seems advisable to prefer wider spacing between elements. 
+
+Additionally, the number of components per side should be limited to three at most, anchoring them spatially to the corners and sides of the display and keeping the center of vision free. \cite{}
+
+% DYSON 2001 reading speed + line length
+
+% OST-HMD PERFORMANCE
+% \textcite{kimInfluencesAugmentedReality2019} tested a binocular HUD for warehouse order picking, which requires frequently referencing the displayed information.
+% They tested both on-demand and always-on methods. The on-demand showed worse task performance, and it was hypothesized that this was due to higher perceived workload, and higher mental and temporal demand, performance, effort, and frustration subscales (NASA-TLX).
 % - "performance, workload, and usability were more affected by UI designs than the HWD type."
 % - "Compared to the baseline paper pick list condition, using an HWD, especially with the graphic-based UI, led to improved job performance and reduced perceived workload, while causing increased discomfort"
 % - "Responses to the workplace cognitive failure scale also indicated a lower risk of cognitive failure specifically with the graphic-based UI design + always-on display."
-
-% DYSON 2001
-
-% According to \textcite{linFindingOptimumPosition2021}, 8° to 20° horizontally seem to be most comfortable.
-% Vertically limit to 8° above and below visual center
-% - "We are surprised to discover that there are no significant differences in task times between the four different display positions. We expected a more uncomfortable viewing angle would have a more dramatic effect in slowing users so that their order picking times would increase, especially for the bottom-right position." BUT "we realized that users stop after picking one book to find and plan their path to pick their next book, instead of trying to read and interpret data while on the move. The extra time taken to stop and plan their path could mask the differences in time taken to perceive picking information"
-% - "the bottom-center position could be inferior in situations in which users have to look at their feet such as stairs mobility and rough terrain maneuvering."
-% - "A bottom-right display could also interfere with tasks involving the hands."
-% - "The display situated between 5.4° to 14.6° toward the ear was most preferred by users. It did not block the line-of-sight view and was also closest to center-center positioning. However, Dowell’s work on cognitive capture [8] suggests keeping all pixels at least 8° from line-of-sight."
-% - "there may be an ideal, general purpose HWD position between 8 to 20° temporally offset from line-of-sight. Horizontal FOV would thus be 12°. Vertical FOV requires more investigation, but limiting pixels to between ±8° from center as in Haynes’s comfort study [21] seems wise"
-% - "As mentioned previously, from Chua’s work we wish to avoid nasally offset displays, and positions much above line-of-sight are uncomfortable for extended use CHUA 2015."
-% Though they used a monocular display with a 12° by 16° FOV, they mention the possibility to place another display on the other side of the head, effectively doubling the FOV.
-
-% \cite{dowellEffectVisualLocation2002}
-% - flight sim
-% - "HUD information located less than 8 deg from the out-the-window point of interest can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed"
-% - "Additionally, it was shown that HUD symbology placed in the upper portion of the visual scene (greater than 8 deg from the central focus), led to improved simultaneous processing of the HUD symbology and the forward view." BUT "hypothesized that this difference is rooted in the reduced clutter and background motion found when the HUD overlaid the sky, as opposed to the ground."
 
 \subsection{Notifications}
 

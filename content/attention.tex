@@ -2,8 +2,8 @@
 
 After discussing the mechanisms of perception and attention, the question arises as to how they can be utilized and which aspects need to be taken into consideration in order to do so.
 
-How is it influenced by demanding situations? 
-How do we capture attention if needed?
+% How is it influenced by demanding situations? 
+% How do we capture attention if needed?
 % to estimate the requirements for efficient information acquisition in dynamic situations
 
 \subsection{Situation Awareness}
@@ -49,42 +49,35 @@ In the gaze-summon interface, visual targets are placed near the position where 
 % This further ties into context-aware interfaces, which display information based on current task or cognitive load [\cite{rhodesWIMPInterfaceConsidered1998}]. The risk of false positives is unjustifiable in safety-critical environments.
 % context awareness \cite{krevelenSurveyAugmentedReality2010}
 
-Glanceability provides an interactive approach to countering information overload. That said, visual elements must also be designed, and in such a way as to draw the user's attention to the relevant information.
+These methods offer an interactive approach to countering information overload. That said, visual elements must also be designed, and in such a way as to draw the user's attention to the relevant information.
 
-\subsection{Capturing Attention}
-
-The rapid processing of information occurs in two steps: locating the information and then interpreting it. this process is facilitated by two guiding principles, which are the prioritization and abstraction of information.
-
-% visual search mechanisms -> HVS
-
-\textcite{shaoHowDynamicInformation2023}
-"guide the visual flow and establish the pointing constraints of the user's line of sight"
-
-- "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out. \cite{baldassiPopoutTargetsModulated2004}"
-  - "Pop-out is a bottom-up drawing of attention to an object, which occurs when an object within the visual field is distinctive along some visual dimension (for example, possessing a distinctive color or brightness when compared with other objects in the field)." -> POWER OF CONTRAST
-
-
-\textcite{matthewsToolkitManagingUser2004} mention three aspects of attention management in their "Peripheral Displays Toolkit": abstracting information to make it glanceable (see GLANCEABILITY concept), assigning notification levels to information and designing (visual) and transitions between those levels.
-
-
-GRAPHIC abstraction as scale of readability <-> unobtrusiveness
-
-Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
+\subsection{Interruption}
 
 \cite{matthewsDesigningGlanceablePeripheral2006}
 "Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion."
 
-habituation: less attention to any stimulus that occurs frequently
+Notification levels equal importance of information, corresponding to action priority
 
-\cite{janakaNotiFadeMinimizingOHMD2023} getting attention without harshly interrupting primary task
-\cite{salisburyAttentionChangesHeadWorn2024}
-\cite{chewarUnpackingCriticalParameters2004} IRC framework (interruption, reaction, comprehension)
+% TABLE notification level and corresponding design choices + elements e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
 
-Notification levels equal importance of information, corresponding to action priority (in HUD case)
-TABLE notification level and corresponding design choices + elements
-e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
+\textcite{matthewsToolkitManagingUser2004} present a "Peripheral Displays Toolkit", which helps to assign notification levels to information, shows how these transitions between those levels should look, and how information has to be abstracted to be "glanceable".
+"Abstraction involves extracting features or reducing the fidelity of information so that it is easier to read “at a glance” than the raw input. Abstraction enables lowerattention consumption of information."
+Notification levels correspond to information priority.
+distinction again between getting attention and just monitoring
+They categorize attention into inattention, dividided attention and focused attention, where the two latter kinds are how humans consciously perceive.
+The notification levels presented are ignore, change blind, make aware, interrupt, and demand action. Demand action even requires the user to do something to stop the alarm.
+"While it may seem contradictory for a peripheral display to attract focused attention, this enables a display to be peripheral when it is not displaying important information. A watch alarm only requires focused attention when it goes off, alerting the user that it is time to go somewhere. If a user could not count on the alarm to attract her full attention, she would pay more attention to the watch."
+With transitions, effects that capture an appropiate amount of attention can be created.
+Attracting focal attention equals interrupting the user, usually with abrupt transitions.
+When aiming for divided attention, abruptly update smaller areas of the screen or use slow movements.
 
----
+%Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
 
-talked about managing attention, what to do once we got it?
-To make information glanceable, concepts of data visualization can be leveraged.
+Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
+\textcite{janakaNotiFadeMinimizingOHMD2023} suggest using animation to soften the impact a little. 
+Fade-in animations reduce interference, though they are dependent on duration, location, and primary task complexity. The longer the fade-in, the less noticable the notification becomes. Additionally, the duration is affected by external lighting.
+"Although fade-in animation can reduce the interference to primary tasks, its practical usage should depend on the utility of notifications [21, 40]. As expressed by two participants, how notifications appear can signal their level of importance and urgency; slow fade-in notifcations can and are suited to signal lower levels of urgency [18]. Although perceived urgency and importance are infuenced by fade-duration, the maximum delay of notifications was 4-seconds. This may mean that fade-duration is not the biggest fact in attendance to notifcations."
+
+% - timing can affect amount of interruption
+
+% \cite{andersonSurveyAttentionManagement2018} notification strategies: mediating, indicating, mitigating
