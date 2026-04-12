@@ -1,6 +1,7 @@
 \section{Design Guidelines}
 \label{sec:guidelines}
 
+
 To facilitate situation awareness, the HUD should show as much information as possible without causing fatigue or sensory overload. The displayed information should be comprehensible in as short a time as possible. In an emergency, the system must be able to get the user's attention, without hindering decision-making or interrupting the primary task completely.
 
 % Some design fundamentals can be ignored, since the HUD will be worn by trained users.
@@ -27,24 +28,30 @@ In addition, monochrome displays are more affordable and therefore offer economi
 
 \subsection{Typography}
 
-% text drawing styles
-
-Aside from screen shake, reading performance is impacted by lighting and background texture, reiterating the importance of proper contrast.
-
-To find requirements for font size, \textcite{renkewitzOptimalFontSize2008} tested to what extent the background and font colors affect text recognition. They set a benchmark of two seconds as threshold for fast recognition, which resulted in recommended font sizes from 23 to 42 pt, depending on color and background. However, these numbers may have to be adjusted for an OHMD, since they used a video see-through system, and red and blue as colors, both colors with lower luminance.
-
-As mentioned in Section \ref{sec:AR}, thinner lines tend to disappear due to screen shake.
+As with all head-mounted devices, walking causes them to shake, which affects legibility [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down motion.
 \textcite{matsuuraReadabilityLegibilityFonts2019} confirm that heavier font weights improve readability. Naturally, the same requirements exist for stroke width.
 
 As example, the typeface "Inter" fits the requirements well. It has a uniform thickness of strokes, a square letter form and good spacing between its lines.
-
 % GRAPHIC comparison inter and an unsuitable typeface
 
 % \begin{figure}[hbt]
 %     \centering
 %     %\includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
-%     \caption{A comparison of different stroke widths.}
-%     \label{fig:stroke_width}
+%     \caption{A comparison of the types Inter and ??}
+%     \label{fig:type_comparison}
+% \end{figure}
+
+Aside from screen shake, reading performance is impacted by lighting and background texture, reiterating the importance of proper contrast.
+
+To find requirements for font size, \textcite{renkewitzOptimalFontSize2008} tested to what extent the background and font colors affect text recognition. They set a benchmark of two seconds as threshold for fast recognition, which resulted in recommended font sizes from 23 to 42 pt, depending on color and background. However, these numbers may have to be adjusted for an OHMD, since they used a video see-through system, and red and blue as colors, both colors with lower luminance.
+
+% text drawing styles
+
+% \begin{figure}[hbt]
+%     \centering
+%     %\includegraphics[width=1\textwidth]{assets/icons_hazard.eps}
+%     \caption{Text drawing styles}
+%     \label{fig:text_styles}
 % \end{figure}
 
 \subsection{Iconography}

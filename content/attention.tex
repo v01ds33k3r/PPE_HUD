@@ -51,29 +51,22 @@ In the gaze-summon interface, visual targets are placed near the position where 
 
 These methods offer an interactive approach to countering information overload. That said, visual elements must also be designed, and in such a way as to draw the user's attention to the relevant information.
 
-\subsection{Interruption}
+\subsection{Capturing Attention}
 
-\cite{matthewsDesigningGlanceablePeripheral2006}
-"Design variables used for capturing user attention include abrupt onset, flashing, bouncing, and other motion."
-
-Notification levels equal importance of information, corresponding to action priority
+Peripheral displays are designed to just enable passive monitoring of information. In critical moments, however, the display has to capture the user's attention, which can be achieved by using motion.
+Still, some information is more important than other, therefore, notifications should be distiguished into levels, corresponding to that priority.
 
 % TABLE notification level and corresponding design choices + elements e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
 
-\textcite{matthewsToolkitManagingUser2004} present a "Peripheral Displays Toolkit", which helps to assign notification levels to information, shows how these transitions between those levels should look, and how information has to be abstracted to be "glanceable".
-"Abstraction involves extracting features or reducing the fidelity of information so that it is easier to read “at a glance” than the raw input. Abstraction enables lowerattention consumption of information."
-Notification levels correspond to information priority.
-distinction again between getting attention and just monitoring
-They categorize attention into inattention, dividided attention and focused attention, where the two latter kinds are how humans consciously perceive.
-The notification levels presented are ignore, change blind, make aware, interrupt, and demand action. Demand action even requires the user to do something to stop the alarm.
-"While it may seem contradictory for a peripheral display to attract focused attention, this enables a display to be peripheral when it is not displaying important information. A watch alarm only requires focused attention when it goes off, alerting the user that it is time to go somewhere. If a user could not count on the alarm to attract her full attention, she would pay more attention to the watch."
-With transitions, effects that capture an appropiate amount of attention can be created.
-Attracting focal attention equals interrupting the user, usually with abrupt transitions.
-When aiming for divided attention, abruptly update smaller areas of the screen or use slow movements.
+\textcite{matthewsToolkitManagingUser2004} present a "Peripheral Displays Toolkit", which helps to assign notification levels to information and shows how these transitions between those levels should look.
+% attention levels in HVS?
+First, they categorize attention into inattention, divided attention and focused attention. These categories can then be matched to notification levels. Transitions serve to create effects that capture an appropiate amount of attention.
+Abrupt transitions, for example, are meant to interrupt the user to attract focal attention. When aiming for divided attention, abruptly updating smaller areas of the screen or using slow movements should be sufficient.
 
+% "While it may seem contradictory for a peripheral display to attract focused attention, this enables a display to be peripheral when it is not displaying important information. A watch alarm only requires focused attention when it goes off, alerting the user that it is time to go somewhere. If a user could not count on the alarm to attract her full attention, she would pay more attention to the watch."
 %Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
 
-Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
+% Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
 \textcite{janakaNotiFadeMinimizingOHMD2023} suggest using animation to soften the impact a little. 
 Fade-in animations reduce interference, though they are dependent on duration, location, and primary task complexity. The longer the fade-in, the less noticable the notification becomes. Additionally, the duration is affected by external lighting.
 "Although fade-in animation can reduce the interference to primary tasks, its practical usage should depend on the utility of notifications [21, 40]. As expressed by two participants, how notifications appear can signal their level of importance and urgency; slow fade-in notifcations can and are suited to signal lower levels of urgency [18]. Although perceived urgency and importance are infuenced by fade-duration, the maximum delay of notifications was 4-seconds. This may mean that fade-duration is not the biggest fact in attendance to notifcations."
@@ -81,3 +74,5 @@ Fade-in animations reduce interference, though they are dependent on duration, l
 % - timing can affect amount of interruption
 
 % \cite{andersonSurveyAttentionManagement2018} notification strategies: mediating, indicating, mitigating
+
+"Abstraction involves extracting features or reducing the fidelity of information so that it is easier to read “at a glance” than the raw input. Abstraction enables lower attention consumption of information."
