@@ -26,7 +26,7 @@ The requirements of situation awareness make clear that information has to be qu
 Peripheral displays do just that—keeping relevant information accessible while offering the choice of whether or not to continue with the current task [\cite{matthewsDefiningDesigningEvaluating2005}].
 On the other hand, so-called notification displays actively interrupt the user to prompt necessary action. 
 
-% \cite{birnholtzAwarenessDesktopExploring2010} peripheral displays
+% \cite{birnholtzAwarenessDesktopExploring2010} peripheral display performance
 
 Building onto this categorization, \textcite{matthewsDesigningGlanceablePeripheral2006} introduces the concept of glanceability—a term used to describe information that is quickly and easily comprehended once it is paid attention to.
 Glanceability is directly impacted by the displayed amount of items, their salience, etc.—i.e. the attentional limits described in Section \ref{sec:HVS_attention}. In this context, \textcite{matthewsDesigningGlanceablePeripheral2006} emphasizes that visual components need to "balance distinctiveness with too much demand for attention."
@@ -49,30 +49,26 @@ In the gaze-summon interface, visual targets are placed near the position where 
 % This further ties into context-aware interfaces, which display information based on current task or cognitive load [\cite{rhodesWIMPInterfaceConsidered1998}]. The risk of false positives is unjustifiable in safety-critical environments.
 % context awareness \cite{krevelenSurveyAugmentedReality2010}
 
-These methods offer an interactive approach to countering information overload. That said, visual elements must also be designed, and in such a way as to draw the user's attention to the relevant information.
+These methods offer an interactive approach to countering information overload. That said, visual elements must also be designed in such a way as to draw the user's attention to the relevant information.
 
 \subsection{Capturing Attention}
 
-Peripheral displays are designed to just enable passive monitoring of information. In critical moments, however, the display has to capture the user's attention, which can be achieved by using motion.
-Still, some information is more important than other, therefore, notifications should be distiguished into levels, corresponding to that priority.
+Peripheral displays are designed to enable passive monitoring of information. In critical situations, however, the display must be able to capture the user's attention, which can be achieved through the intentional use of motion.
+
+% Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
+
+In their "Peripheral Displays Toolkit" \textcite{matthewsToolkitManagingUser2004} demonstrate how to assign appropriate notification levels to information and what the transitions between these levels should look like.
+Abrupt transitions, for example, are meant to interrupt the user in order to attract their full attention. When aiming for divided attention, it should be sufficient to update smaller areas of the screen or to use slower animations.
+
+% passive monitoring = inattention
+% active monitoring = divided attention
 
 % TABLE notification level and corresponding design choices + elements e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
 
-\textcite{matthewsToolkitManagingUser2004} present a "Peripheral Displays Toolkit", which helps to assign notification levels to information and shows how these transitions between those levels should look.
-% attention levels in HVS?
-First, they categorize attention into inattention, divided attention and focused attention. These categories can then be matched to notification levels. Transitions serve to create effects that capture an appropiate amount of attention.
-Abrupt transitions, for example, are meant to interrupt the user to attract focal attention. When aiming for divided attention, abruptly updating smaller areas of the screen or using slow movements should be sufficient.
-
 % "While it may seem contradictory for a peripheral display to attract focused attention, this enables a display to be peripheral when it is not displaying important information. A watch alarm only requires focused attention when it goes off, alerting the user that it is time to go somewhere. If a user could not count on the alarm to attract her full attention, she would pay more attention to the watch."
-%Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
 
-% Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
-\textcite{janakaNotiFadeMinimizingOHMD2023} suggest using animation to soften the impact a little. 
-Fade-in animations reduce interference, though they are dependent on duration, location, and primary task complexity. The longer the fade-in, the less noticable the notification becomes. Additionally, the duration is affected by external lighting.
-"Although fade-in animation can reduce the interference to primary tasks, its practical usage should depend on the utility of notifications [21, 40]. As expressed by two participants, how notifications appear can signal their level of importance and urgency; slow fade-in notifcations can and are suited to signal lower levels of urgency [18]. Although perceived urgency and importance are infuenced by fade-duration, the maximum delay of notifications was 4-seconds. This may mean that fade-duration is not the biggest fact in attendance to notifcations."
+\textcite{janakaNotiFadeMinimizingOHMD2023} implemented this approach and demonstrated that using fade-in animations reduces the impact of interruption. The effectiveness of the notifications depends on their duration, position, as well as the complexity of the main task.
 
-% - timing can affect amount of interruption
+% JANAKA 2023 "how notifications appear can signal their level of importance and urgency; slow fade-in notifications can and are suited to signal lower levels of urgency.
 
 % \cite{andersonSurveyAttentionManagement2018} notification strategies: mediating, indicating, mitigating
-
-"Abstraction involves extracting features or reducing the fidelity of information so that it is easier to read “at a glance” than the raw input. Abstraction enables lower attention consumption of information."
