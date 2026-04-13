@@ -3,6 +3,7 @@
 \documentclass[
     12pt,
     a4paper,
+    twoside,
     titlepage,
     bibliography=totoc,
     bibliography=leveldown,
@@ -18,9 +19,10 @@
     ]{biblatex}
     \addbibresource{meta/thesis.bib}
     
-\usepackage{graphicx}
 \usepackage{multicol}
-    
+\usepackage{graphicx}
+\usepackage{booktabs}
+
 \input{meta/formatting}
     
 \setcounter{tocdepth}{2}
@@ -30,6 +32,7 @@
     \include{meta/title}
 
     \tableofcontents
+    \clearpage
 
     \include{content/introduction}
     \include{content/applications}

@@ -11,9 +11,10 @@ A prioritization of elements is necessary for decisions on visual hierarchy, as 
 
 \begin{table}[hb]
     \centering
-    \begin{tabular}{l | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth}}
+    \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}}
+        \toprule
         & Display Mode & Visualization \\
-        \hline
+        \midrule
         Oxygen & Continuous & Status Bar, Value \\
         Hazard Proximity & Pop-Up & Icon \\
         Warning Notification & Pop-Up & Billboard \\
@@ -23,6 +24,7 @@ A prioritization of elements is necessary for decisions on visual hierarchy, as 
         Humidity & Continuous &  Icon, Value \\
         Checklist & Continuous & Line Highlight \\
         Tool Help & Pop-Up & Icon, Value \\
+        \bottomrule
     \end{tabular}
     \caption{Parameters chosen for visualization, ordered from most to least important.}
 \end{table}
@@ -163,7 +165,7 @@ The maximum variant of the interface was designed with full functionality in min
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/UI_max.png}
+    \includegraphics[width=1\textwidth]{assets/UI_max.eps}
     \caption{Full-featured UI concept for a binocular HUD.}
     \label{fig:UI_max}
 \end{figure}
@@ -172,11 +174,9 @@ While the oxygen component is the most important, it is not necessarily the one 
 
 The minimum version is based on the Google Glass, featuring a monocular display with a resolution of 640 by 360 pixels.
 
-% https://vr-compare.com/compare?h1=EkSDYv0cW\&h2=EnqtMtA05
-
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/UI_min.png}
+    \includegraphics[width=1\textwidth]{assets/UI_min.eps}
     \caption{UI concept for a monocular HUD, worn in the upper left of the field of vision.}
     \label{fig:UI_min}
 \end{figure}
@@ -186,7 +186,7 @@ One could argue that some overlap of the components would be useful to make bett
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1\textwidth]{assets/UI_overlap.eps}
-    \caption{Overlap of the checklist and oxygen bar.}
+    \caption{A negative example of overlapping elements. Placing the hazard symbols below the oxygen bar would save space, but disrupts the visual hierarchy.}
     \label{fig:UI_overlap}
 \end{figure}
 
