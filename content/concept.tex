@@ -1,13 +1,11 @@
 \section{Conceptualization}
 \label{sec:concept}
 
-% To avoid the user needing to remember in which direction the information was placed, this information could be anchored by representative icons. Or the primary information which hides related information (e.g. task list that shows current and a limited amount of next steps, that displays the complete list when accessed)
-
-\emph{For printing, the color of the designs was inverted to black on white. A UI example in original colors is included as Figure \ref{fig:HUD_colors}}.
+{\small\emph{For printing, the color of the designs was inverted to black on white. A UI example in original colors is included as Figure \ref{fig:HUD_colors}}.}
 
 \subsection{Components}
 
-A prioritization of elements is necessary for decisions on visual hierarchy, as well as which ones can be left out if there is not enough space.
+A prioritization of elements is necessary in order to establish a visual hierarchy and determine which elements should be omitted if there is not enough space.
 
 \begin{table}[hb]
     \centering
@@ -26,95 +24,71 @@ A prioritization of elements is necessary for decisions on visual hierarchy, as 
         Tool Help & Pop-Up & Icon, Value \\
         \bottomrule
     \end{tabular}
-    \captionbelow{Parameters chosen for visualization, ordered from most to least important.}
+    \captionbelow{Parameters chosen for visualization, ordered from most to least important. Continuous means that the component will be displayed permanently. Parameters marked with pop-up will be displayed occasionally when relevant.}
 \end{table}
 
-% maybe columns: frequency of checking,
+\subsubsection{Visualizing Oxygen Usage With a Status Bar}
 
-Continuous means that the component will be displayed permanently. Parameters marked with pop-up will be displayed occasionally when relevant. 
+Since the oxygen value is the decisive factor whether or not to continue work, this component takes center stage. As the most important parameter, this component will be visible in any version of the HUD. To ensure the current status is recognizable at a glance, the value is visualized with a status bar.
 
-% Following the previous guidelines, every element is designed for maximum clarity.
-
-\subsubsection{Visualizing Oxygen Usage Through a Status Bar}
-
-Since the oxygen value is the crucial factor whether or not to continue work, this is the component taking the spotlight. As the most critical parameter, this component will be visible in any version of the HUD. To check the current status as quickly as possible, the value will be visualized with a status bar.
-
-Since mechanical gauges with a pointer show visual progress by default, a radial version of the component was included.
-% Additionally, the component takes up grid space shaped more as a square, which offers different layout options. 
-However, as mentioned in Section \ref{sec:datavis}, linear design enable much quicker parsing of the information. Compared to the linear version, it also takes up much more space to make the information readable.
+A radial version of the component was created based on mechanical gauges, whose hands indicate the status by default. This component also occupies a relatively square area within the grid, which allows for alternative layout options.
+However, compared to the linear version, it requires significantly more space to ensure the information is legible. Furthermore, as mentioned in section \ref{sec:datavis}, a linear design enables much faster information processing.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/oxy_radial_bar.eps}
-    \captionbelow{The initial concepts for the status bar, considering overall shape.}
+    \captionbelow[Radial and linear status bar]{Radial and linear concepts for the status bar}
     \label{fig:oxy_radial_bar}
 \end{figure}
 
-The second version places the value below the bar, on the right. When the amount of oxygen decreases, the empty portions of the bar are only a contour. Thus, the contrast between value and bar becomes stronger. 
-The label is placed in front of the bar so they blend together, making it less salient.
-Additionally, the status bar was divided into quarter segments, enabling more accurate estimation of the amount left, without looking at the value. 
-%Another hypothetical advantage of the gaps in the bar might be that more of the background can be seen.
+In the second version, the value is displayed to the right below the bar. As the oxygen level decreases, the empty sections of the bar appear only as outlines, which increases the contrast between the value and the bar.
+The label is placed in front of the bar so that the two blend together, making the label less noticeable.
+In addition, the status bar has been divided into quarter segments, allowing for a more accurate assessment of the remaining amount without having to look at the value.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/oxy_horizontal.eps}
-    \captionbelow{The modified status bar and the following segmentation.}
+    \captionbelow[Quarter segmentation of the status bar]{The status bar divided into quarter segments, allowing status assessment without having to look at the value.}
     \label{fig:oxy_segment}
 \end{figure}
 
-Depending on available screen space and layout configuration, a vertical version of the component might be needed in addition to the horizontal one. 
-
-Grouping the label and value on one side saves space (left and middle of Figure \ref{fig:oxy_vertical}). Aligning them at the top and bottom respectively accounts for visual crowding, making the value more distinctive.
-The oxygen value is located so that the status bar is seen first, i.e. if the component is placed on the left side, the bar will be on the right to maintain an optical guide.
+Depending on the available screen space and the layout configuration, a vertical version of the component should be available in addition to the horizontal one.
+Grouping the label and value on the same side saves space. Aligning them at the top and bottom mitigates visual crowding and accentuates the value.
+The labels are positioned so that the status bar is perceived first, i.e. when the component is placed on the left side, the bar will be on the right to provide visual guidance.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/oxy_vertical.eps}
-    \captionbelow{Development of the vertical status bar.}
+    \captionbelow[Vertical status bar]{Development of the vertical status bar. The correct version accounts for visual crowding and accentuates the value.}
     \label{fig:oxy_vertical}
 \end{figure}
 
 \subsubsection{The Base Component}
 
-This element is built with a simple configuration for secondary information that is helpful, but does not need to be prioritized. This includes data like heart rate, but also environmental information such as ambient temperature or humidity.
+Secondary data—which, while helpful, is not a priority and therefore does not need to be visualized—can be based on a standardized base component. This includes, for example, data such as heart rate, as well as environmental information such as ambient temperature or humidity.
 
-Values that are not to be visualized are similar enough to be based on a universal base component. Apart from the actual parameter value, any of these elements can be hidden. This allows flexible configuration depending on the type of information.
+Apart from the actual parameter value, any element of the base component can be hidden. This allows for flexible configuration depending on the type of information. Because they share a common base, the information is visually similar enough to be grouped into blocks.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/base_component.eps}
-    \captionbelow[The base component]{The base component with configurable icon, parameter value, unit and trend indicator.}
+    \includegraphics[width=0.8\textwidth]{assets/base_component.eps}
+    \captionbelow[The base component and example configurations]{The base component with configurable icon, parameter value, unit, and trend indicator, as well as sample configurations for heart rate, tool help, and countdown.}
     \label{fig:base_component}
 \end{figure}
 
-The icons replace labels, and should therefore be as unambiguous as possible.
-% If the icon is unambiguous enough, it is easier to hide the unit. 
-Leaving the unit out saves space, though in some cases, it supports the identification of the value (e.g., degrees Fahrenheit or Celsius).
+The icons replace labels and should therefore be as unambiguous as possible. In some cases, the unit helps identify the value (e.g., degrees Fahrenheit or Celsius). If this is not the case, they should preferably be omitted.
 
-The trend indicators are displayed based on the difference of the current and previous value. The value increasing or decreasing an unusual amount might indicate events to take notice of. For dynamic elements like these, the frequency of changes should not be too high to avoid distraction. Comparing the short and long arrows, the long arrows are better readable when out of focus.
+Trend indicators are displayed based on the difference between the current and previous values. An unusually sharp increase or decrease in the value may indicate events that warrant attention. For dynamic elements such as these, the frequency of changes should not be too high to avoid distractions.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.8\textwidth]{assets/arrow_shape.eps}
-    \captionbelow[Comparison of short and long arrows]{Comparison of short and long arrows.}
-    \label{fig:arrow_shape}
-\end{figure}
+All of these values are displayed continuously, with the exception of the time display, which appears only after a certain period of time has elapsed. The appearance of this element in the peripheral vision signals (for example) that half of the time limit has passed, which encodes this action itself with information.
 
-All of these values are displayed continuously, with the exception of the time component. It will only be displayed after a configured amount of time. The element popping up is meant to be perceivable in the peripheral vision, marking (for example) the halfway point, encoding this action with information.
-Since working time is limited by various parameters and therefore not fixed, the component is formatted as a countdown. To avoid pulling unnecessary attention, the display is limited to minutes, rather than ticking down by the second.
+Since the working time is limited by various parameters and is therefore not fixed, the component is formatted as a countdown. To avoid drawing attention to itself with too frequent changes, the display shows only minutes rather than counting down to the exact second.
 
 \subsubsection{Notifications and Pop-Ups}
 
-% designed the fire and explosion hazard icons myself
+Referencing conventional industrial warning signs, the hazard icons were created in a triangular and a diamond-shaped version. Comparing them however, reveals that the diamond shape has smaller overall dimensions, which also means there is less space available for the illustration.
 
-% Screen edge indicators do not work.
-Referencing typical industrial warning signs, the hazard icons were created in a triangular and a diamond-shaped version. Comparing them however, reveals that for the same size, the diamond shape appears smaller. This also means that there is less space for the graphic inside it.
-Avoiding unique silhouettes unites them in their function.  For peripheral distinction, their placement is therefore more important.
-The icons are placed close together so that they are visible at the same angle if multiple hazards are present. Similar to a car's dashboard warning lights, each of them has a fixed position, facilitating rapid information acquisition. With regular notifications—depending on which one appears first—the order of content would be different.
-% explain/example, was unclear
-
-% Horizontal versus vertical arrangement
-%Since the visual search field is wider than it is tall, horizontal might blend together, stacked vertically—therefore at the same visual angle—they might be more distinctive. More a loose guideline, flexible in regard to screen real estate.
+To standardize their function, the same silhouette is used for all icons, meaning that their spatial arrangement is much more important for peripheral distinction. Similar to the warning lights on a car's dashboard, each symbol has a fixed position to facilitate rapid information acquisition.
 
 \begin{figure}[hbt]
     \centering
@@ -123,30 +97,13 @@ The icons are placed close together so that they are visible at the same angle i
     \label{fig:notif}
 \end{figure}
 
-The core example of the notification system is the high priority warning. This component is designed with a so-called billboard style, meaning text with a surrounding box. The big, bright area ensures high visibility even if the pop-up is not in the center of vision. Since it is the highest priority, it is the only element placed in the upper central screen area. To avoid blocking central vision for too long, the pop-up will transform into a smaller version located at [...].
+The prime example of the notification system is the high-priority, billboard-style alert (see Figure \ref{fig:text_styles}). The large, bright area ensures good visibility even when the pop-up is not in the center of the user's field of view. Since it has the highest priority, it is the only element placed in the upper central area of the screen. To avoid obscuring vision for too long, the pop-up shrinks to a smaller version but continues to flash to remain in the user's awareness.
 
-% Grabs attention first, readability second step -> text case?
-% Oxygen vs O2/abbreviations better?
-
-
-% - demand action requires user to perform an action to silence the alert
-% - could argue that oxygen low or hazard proximity demands action, but in in emergency cases there might be no way to immediately take action based on that, and the HUD should not impede the user's decision-making, which an ongoing alarm would do
-
-
-% Certain functionality to get the user's attention is implemented.
-% warning pops up in FFOV [\textcite{rosenholtzCapabilitiesLimitationsPeripheral2016}] + then moves to the side (to not hinder visibility) w/ blinking icon (so it's not forgotten)
+This occurs without user intervention. Low oxygen levels or hazard proximity do require action, but in the intended scenarios there may be no opportunity to act immediately, and the HUD should not hinder the user's decision-making, which would be the case with a persistent alarm.
 
 \subsubsection{The Checklist Component}
 
-% combines interaction paradigms introduced by \cite{luGlanceableAREvaluating2020}
-
-Since this element is text-based, it relies less on peripheral vision.
-To anchor the gaze to the current task, it is centered vertically and more distinctive than the other displayed tasks.
-%Though the other tasks are smaller, everything is left-aligned to—once again—create an optical guide.
-
-%sentence case vs lower case
-
-Note that this component is meant as a visual example, which is why certain aspects of functionality might not work in regard to handling the list. (e.g. if only two next tasks are displayed, there is no way to see if new tasks got added -> task number display in dynamic situations, generally better for protocol).
+Since the checklist is a text-based element, it is not intended to be comprehensible without looking at it. Nevertheless, some of the previous guidelines can be applied. To draw the user's attention to the current task, it is vertically centered and stands out more clearly from the other tasks on the screen.
 
 \begin{figure}[hbt]
     \centering
@@ -157,16 +114,13 @@ Note that this component is meant as a visual example, which is why certain aspe
     \label{fig:checklist}
 \end{figure}
 
-The icon to the right is an anchor for possible gaze-based interaction, in this case to show more details. This design keeps the current task centered in the detailed view as well for faster orientation. This also mitigates side effects from possible false positives—i.e. if the system mistakenly opens the detailed view.
+The icon serves as an anchor for potential gaze-based interaction, for example, to display additional details such as completed tasks and subtasks. The design keeps the current task centered even in the detail view to enable faster orientation. This also mitigates the impact of potential false alarms—i.e., if the system mistakenly opens the detail view.
 
 \subsection{UI Examples}
 
-\emph{Note: the following illustrations are not to scale.}
+{\small\emph{Note: the following illustrations are not to scale.}}
 
-%The following design will use white, since it is the best visible color on an optical see-though display. If color is applicable, yellow will be used as accent color, reserved for notifications, to heighten the contrast with the standard mode.
-
-
-The maximum variant of the interface was designed with full functionality in mind, based on Microsoft's HoloLens 2. It features a horizontal field of view of 43°, a resolution of 1440 by 936 pixels per eye, and provides full color availability (within the technical limits mentioned in Section \ref{sec:AR}).
+The full-featured version of the user interface is based on Microsoft's HoloLens 2, which has a horizontal field of view of 43°, a resolution of 1440 $\times$ 936 pixels per eye, and covers the entire color spectrum and provides full color availability (within the technical limits mentioned in Section \ref{sec:AR}).
 
 \begin{figure}[hbt]
     \centering
@@ -176,17 +130,21 @@ The maximum variant of the interface was designed with full functionality in min
     \label{fig:UI_max}
 \end{figure}
 
+Although the oxygen component is the most important, it is not necessarily the one that is checked most often—however, it should be the easiest to check. Therefore, it is placed in the lower center. Occasional information pop-ups are placed above the oxygen bar for the same reason: looking down is faster than looking up.
+
+The block containing individual parameters is located on the left side, so that the status indicators are seen first, since they are the primary information of this component. This leaves the right side free for the checklist, which provides visual guidance thanks to its left-aligned text.
+
 \begin{figure}[hbt]
     \centering
     \setlength{\fboxrule}{2pt}
-    \fbox{\includegraphics[width=0.97\textwidth]{assets/HUD_grid.png}}
-    \captionbelow[UI grid]{UI grid}
+    \fbox{\includegraphics[width=0.97\textwidth]{assets/UI_grid.png}}
+    \captionbelow[Grid guide of the full-featured UI]{Grid guide of the full-featured UI}
     \label{fig:UI_grid}
 \end{figure}
 
-While the oxygen component is the most important, it is not necessarily the one that is checked most often; however, it should be the easiest to check. Therefore, it is placed in the lower center. Occasional information pop-ups are placed above the oxygen bar, for the same reason: looking down is faster than looking up.
-
-The minimum version is based on the Google Glass, featuring a monocular display with a resolution of 640 by 360 pixels.
+The minimal version of the user interface is based on the Google Glass Enterprise Edition 2, which features a monocular display with a resolution of 640 $\times$ 360 pixels.
+The limited space requires strict prioritization of elements.
+To ensure that the information is still easy to take in, all elements should be carefully aligned.
 
 \begin{figure}[hbt]
     \centering
@@ -196,7 +154,7 @@ The minimum version is based on the Google Glass, featuring a monocular display 
     \label{fig:UI_min}
 \end{figure}
 
-One could argue that some overlap of the components would be useful to make better use of the limited space. However, this would disrupt the grid pattern and the visual guides, resulting in longer search times.
+Arguably, some overlap of components would be useful to make better use of the limited space. However, this would disrupt the grid and visual hierarchy, decreasing visual search performance.
 
 \begin{figure}[hbt]
     \centering
@@ -207,8 +165,8 @@ One could argue that some overlap of the components would be useful to make bett
 
 \begin{figure}[hbt]
     \centering
-    % \includegraphics[width=1\textwidth]{assets/HUD_size.eps}
-    \captionbelow{HUD example}
+    \includegraphics[width=1\textwidth]{assets/HUD_colors.png}
+    \captionbelow{Full-featured HUD. Four black layers with 25\% opacity have been added and stacked on top of each other to visualize lenses with varying degrees of tint often added by the manufacturers.}
     \label{fig:HUD_colors}
 \end{figure}
 

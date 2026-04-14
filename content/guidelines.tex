@@ -6,12 +6,6 @@ They serve as a basis for the design of head-up displays intended to support the
 
 To facilitate situation awareness, the HUD should be capable of providing as much information as possible without causing fatigue or sensory overload. The displayed information should be comprehensible in the shortest possible time. In an emergency, the system must be able to capture the user's attention without hindering decision-making or completely interrupting the primary task.
 
-% Some design fundamentals can be ignored, since the HUD will be worn by trained users.
-
-% novice vs expert users
-% users are/will be trained with equipment -> able to forego certain design principles
-% shneiderman (user interfaces): novice + expert user, universal usability
-
 \subsection{Color and Contrast}
 
 As mentioned in Section \ref{sec:AR}, the use of colors in HMDs intended for daylight use is primarily limited by current optical see-through technology. \textcite{gabbardPerceptualColorMatchingMethod2022} recommend to prefer colors with high source luminance, as these are less prone to color shifts. Furthermore, if a color typically represents a specific meaning and cannot be guaranteed to be perceived correctly, alternative colors that can meaningfully convey that message should be considered. Red is specifically cited as an example, as it is highly susceptible to color shifts due to its low luminance.
@@ -69,10 +63,14 @@ Naturally, this requires the icons to be easily recognizable. To that end, \text
     \label{fig:icons_hazard}
 \end{figure}
 
-% Icons can utilize small screen estate more efficiently.
-% \subsection{Polarity} % OR in HVS
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/arrow_shape.eps}
+    \captionbelow[Comparison of short and long arrows]{Comparison of short and long arrows.}
+    \label{fig:arrow_shape}
+\end{figure}
 
-% \cite{lindbergEffectIconSpacing2003}
+\textcite{lindbergEffectIconSpacing2003} point out that the size of icons has a greater impact on visual search performance than the spacing between them. However, a spacing of 0.5 to 1 symbol should be maintained. They additionally mention that a grid of 5 $\times$ 5 icons can be processed in one fixation.
 
 \subsection{Layout and Spacing}
 
