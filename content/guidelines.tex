@@ -21,7 +21,7 @@ The library chroma.js\footnote{\href{https://gka.github.io/chroma.js/\#color-lum
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1\textwidth]{assets/colors_luminance.eps}
-    \caption{Base colors sorted by luminance.}
+    \captionbelow[Colors sorted by luminance]{Colors sorted by highest to lowest luminance, in order: yellow, cyan, green, magenta, red, and blue. White and black have been added for reference.}
     \label{fig:colors_sorted}
 \end{figure}
 
@@ -38,35 +38,34 @@ For example, the typeface "Inter" meets these criteria well. It features a unifo
 \begin{figure}[hbt]
     \centering
     \includegraphics{assets/type_comparison.eps}
-    \caption{A comparison of the typefaces Inter and League Gothic, both with a size of 32 px and regular font weight.}
+    \captionbelow[Legibility comparison of "Inter" and "League Gothic"]{A comparison of the legibility of the typefaces "Inter" and "League Gothic," both set at a size of 32 px and in the regular weight. For "League Gothic," a line with increased character spacing was added, demonstrating that the font remains difficult to read.}
     \label{fig:type_comparison}
 \end{figure}
 
 To determine optimal font sizes, \textcite{renkewitzOptimalFontSize2008} tested to what extent the background and font colors affect text recognition. They set a benchmark of two seconds as threshold for fast recognition, which resulted in recommended font sizes from 23 to 42 pt. However, these values may have to be adjusted for use on an OHMD, as they used a video see-through system and the colors red and blue, both of which have low luminance.
 
-
 \textcite{gattulloLegibilityIndustrialAR2015} tested different text drawing styles in an indoor industrial setting. When the use of specific colors is mandated (e.g., in accordance with standard signage regulations), they recommend using white text on a billboard in the required color, which generally performed best. However, the billboard style obstructs much of the background. To remedy this, an outline style could be used, with thicker outlines further improving readability.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/text_styles.eps}
-    \caption{Text drawing styles}
+    \includegraphics[width=0.9\textwidth]{assets/text_styles.eps}
+    \captionbelow{Billboard and outline text drawing styles}
     \label{fig:text_styles}
 \end{figure}
 
 \subsection{Iconography}
 
-% capture attention, thus decreasing search time
+% bigger planes capture attention, thus decreasing search time
 % - amount of coded information
 
 \textcite{janakaCanIconsOutperform2023} tested if, and under which conditions icons perform better than text. They found that icon-augmented notifications enabled significantly higher primary task performance than text only and reduced the level of interruption while maintaining reaction and comprehension. They also found icons are more comprehensible when task complexity increased or demanded more attention. Additionally, the notification were "easier to perceive in suboptimal conditions", including outdoors when walking.
 
-Naturally, this requires the icons to be well-designed. To that end, \textcite{linStudyRelationshipsDifferent2016} tested versions of icons against each other. The differences tested were polarity, plane- and shape-based, and the presence or absence of borders. Since line-based icons dissect the space more frequently, they increase visual complexity, which impairs recognition performance. Overall, white icons on black background performed best.
+Naturally, this requires the icons to be easily recognizable. To that end, \textcite{linStudyRelationshipsDifferent2016} tested different versions of icons against each other. The differences tested were polarity, plane- and shape-based, and the presence or absence of borders. Since line-based icons dissect the space more frequently, they increase visual complexity, which impairs recognition performance. Overall, white shape-based icons on black background performed best.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/icons_line_shape.eps}
-    \caption{Line-based (left) and plane-based (right) icons.}
+    \includegraphics[width=0.9\textwidth]{assets/icons_line_shape.eps}
+    \captionbelow{Line-based and plane-based icons}
     \label{fig:icons_hazard}
 \end{figure}
 
@@ -77,12 +76,16 @@ Naturally, this requires the icons to be well-designed. To that end, \textcite{l
 
 \subsection{Layout and Spacing}
 
-The ability of (binocular) head-mounted displays to display content anywhere in the field of view always entails a trade-off between immediate information access and an unobstructed central line of sight. In use cases involving a great deal of physical activity, a clear field of view should of course be given greater priority.
+The ability of (binocular) head-mounted displays to display content anywhere within the field of view always presents a trade-off between immediate access to information and an unobstructed central line of sight. In use cases involving a great deal of physical activity, a clear field of view should of course be given greater priority.
 
 \textcite{chuaPositioningGlassInvestigating2016} investigated the positioning of content on a monocular OST-HMD worn in front of the right eye. The display was divided into a 3 $\times$ 3 grid, spanning 12.5° vertically and 17° horizontally in both directions from the center.
-The top and most peripheral positions were found to be more comfortable and unobtrusive, although middle and bottom center positions were noticed quicker. 
+The top and most peripheral positions were found to be more comfortable and unobtrusive, although middle and bottom center positions were perceived more quickly.
 The center-right is recommended as best balance between both usability and comfort.
 They mention that the ideal display position is highly dependent on task requirements (e.g., center is better when driving, secondary information better in peripheral).
+
+It was found that the upper and most peripheral positions were perceived as more comfortable and less intrusive, although positions in the center and lower center were perceived more quickly. 
+The position in the lower center is recommended as the best balance between usability and comfort.
+They note that the ideal display position depends heavily on the requirements of the specific task (e.g., the center is better for driving, while secondary information is better placed in the periphery).
 
 % \cite{ishiguroPeripheralVisionAnnotation2011}: illustration perceivable angles of color, shapes, text
 
@@ -132,5 +135,5 @@ The billboard style occludes much of reality around the text, which should gener
         Action Required & Focused Attention & Abrupt Animation \\
         \bottomrule
     \end{tabular}
-    \caption{Attention Levels}
+    \captionbelow{Attention Levels and }
 \end{table}

@@ -3,7 +3,7 @@
 \documentclass[
     12pt,
     a4paper,
-    twoside,
+    % twoside, % print version
     titlepage,
     bibliography=totoc,
     bibliography=leveldown,
@@ -11,6 +11,7 @@
     listof=leveldown
 ]{scrartcl}
 
+% \usepackage[bindingoffset=10mm]{geometry} % print version
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[
@@ -31,11 +32,11 @@
 \begin{document}
     \include{meta/title}
 
+    \cleardoublepage
     \tableofcontents
-    \clearpage
 
     \include{content/introduction}
-    \include{content/applications}
+    \include{content/CPC_applications}
     \include{content/augmented_reality}
     \include{content/HVS_perception}
     \include{content/attention}
@@ -44,11 +45,11 @@
     \include{content/concept}
     \include{content/conclusion}
 
-    \newpage
+    \cleardoublepage
     \addsec{Appendix}
     \printbibliography
     
-    \newpage
+    \cleardoublepage
     \phantomsection
     \protect
     \listoffigures

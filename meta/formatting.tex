@@ -7,11 +7,19 @@
 \fi
 
 % SPACING
-\usepackage[margin=25mm, bindingoffset=10mm]{geometry}
+\usepackage[margin=25mm]{geometry}
 \usepackage{relsize}
 \usepackage{setspace}
 \onehalfspacing
 \setlength{\parskip}{1em}
+
+\setlength{\floatsep}{2em} % space between floats
+\setlength{\textfloatsep}{2em} % space between top/bottom float and text
+\setlength{\intextsep}{2em} % space between text and here float
+\setlength{\belowcaptionskip}{-0.5em}
+
+\usepackage{caption}
+\captionsetup{skip=1.5em}
 
 \renewcommand{\arraystretch}{1.5} % table row spacing
 

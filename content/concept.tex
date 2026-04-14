@@ -5,7 +5,7 @@
 
 \emph{For printing, the color of the designs was inverted to black on white. A UI example in original colors is included as Figure \ref{fig:HUD_colors}}.
 
-\subsection{Relevant Parameters}
+\subsection{Components}
 
 A prioritization of elements is necessary for decisions on visual hierarchy, as well as which ones can be left out if there is not enough space.
 
@@ -26,14 +26,12 @@ A prioritization of elements is necessary for decisions on visual hierarchy, as 
         Tool Help & Pop-Up & Icon, Value \\
         \bottomrule
     \end{tabular}
-    \caption{Parameters chosen for visualization, ordered from most to least important.}
+    \captionbelow{Parameters chosen for visualization, ordered from most to least important.}
 \end{table}
 
 % maybe columns: frequency of checking,
 
 Continuous means that the component will be displayed permanently. Parameters marked with pop-up will be displayed occasionally when relevant. 
-
-\subsection{Components}
 
 % Following the previous guidelines, every element is designed for maximum clarity.
 
@@ -47,8 +45,8 @@ However, as mentioned in Section \ref{sec:datavis}, linear design enable much qu
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/oxy_radial_bar.eps}
-    \caption{The initial concepts for the status bar, considering overall shape.}
+    \includegraphics[width=0.8\textwidth]{assets/oxy_radial_bar.eps}
+    \captionbelow{The initial concepts for the status bar, considering overall shape.}
     \label{fig:oxy_radial_bar}
 \end{figure}
 
@@ -59,8 +57,8 @@ Additionally, the status bar was divided into quarter segments, enabling more ac
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/oxy_horizontal.eps}
-    \caption{The modified status bar and the following segmentation.}
+    \includegraphics[width=0.8\textwidth]{assets/oxy_horizontal.eps}
+    \captionbelow{The modified status bar and the following segmentation.}
     \label{fig:oxy_segment}
 \end{figure}
 
@@ -69,12 +67,10 @@ Depending on available screen space and layout configuration, a vertical version
 Grouping the label and value on one side saves space (left and middle of Figure \ref{fig:oxy_vertical}). Aligning them at the top and bottom respectively accounts for visual crowding, making the value more distinctive.
 The oxygen value is located so that the status bar is seen first, i.e. if the component is placed on the left side, the bar will be on the right to maintain an optical guide.
 
-% - time left w/ current breathing rate
-
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/oxy_vertical.eps}
-    \caption{Development of the vertical status bar.}
+    \includegraphics[width=0.8\textwidth]{assets/oxy_vertical.eps}
+    \captionbelow{Development of the vertical status bar.}
     \label{fig:oxy_vertical}
 \end{figure}
 
@@ -86,8 +82,8 @@ Values that are not to be visualized are similar enough to be based on a univers
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/base_component.eps}
-    \caption{The base component with configurable icon, parameter value, unit and trend indicator.}
+    \includegraphics[width=0.6\textwidth]{assets/base_component.eps}
+    \captionbelow[The base component]{The base component with configurable icon, parameter value, unit and trend indicator.}
     \label{fig:base_component}
 \end{figure}
 
@@ -100,7 +96,7 @@ The trend indicators are displayed based on the difference of the current and pr
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/arrow_shape.eps}
-    \caption{Comparison of short and long arrows.}
+    \captionbelow[Comparison of short and long arrows]{Comparison of short and long arrows.}
     \label{fig:arrow_shape}
 \end{figure}
 
@@ -122,8 +118,8 @@ The icons are placed close together so that they are visible at the same angle i
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/icons_hazard.eps}
-    \caption{Hazard indicator icons.}
+    \includegraphics[width=0.6\textwidth]{assets/icons_hazard.eps}
+    \captionbelow[Hazard indicator icons]{Hazard indicator icons for electricity, explosive atmosphere and fire. The triangle and diamond shapes reference warning and hazard signage, respectively.}
     \label{fig:notif}
 \end{figure}
 
@@ -152,6 +148,15 @@ To anchor the gaze to the current task, it is centered vertically and more disti
 
 Note that this component is meant as a visual example, which is why certain aspects of functionality might not work in regard to handling the list. (e.g. if only two next tasks are displayed, there is no way to see if new tasks got added -> task number display in dynamic situations, generally better for protocol).
 
+\begin{figure}[hbt]
+    \centering
+    \setlength{\fboxsep}{24pt}
+    \setlength{\fboxrule}{2pt}
+    \fbox{\includegraphics[width=0.7\textwidth]{assets/checklist.eps}}
+    \captionbelow[Checklist Component]{Default and expanded checklist. Note the center alignment of the current task to avoid losing focus when the list expands.}
+    \label{fig:checklist}
+\end{figure}
+
 The icon to the right is an anchor for possible gaze-based interaction, in this case to show more details. This design keeps the current task centered in the detailed view as well for faster orientation. This also mitigates side effects from possible false positives—i.e. if the system mistakenly opens the detailed view.
 
 \subsection{UI Examples}
@@ -165,9 +170,18 @@ The maximum variant of the interface was designed with full functionality in min
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/UI_max.eps}
-    \caption{Full-featured UI concept for a binocular HUD.}
+    \setlength{\fboxrule}{2pt}
+    \fbox{\includegraphics[width=0.97\textwidth]{assets/UI_max.eps}}
+    \captionbelow[UI for binocular HUD]{Full-featured UI concept for a binocular HUD.}
     \label{fig:UI_max}
+\end{figure}
+
+\begin{figure}[hbt]
+    \centering
+    \setlength{\fboxrule}{2pt}
+    \fbox{\includegraphics[width=0.97\textwidth]{assets/HUD_grid.png}}
+    \captionbelow[UI grid]{UI grid}
+    \label{fig:UI_grid}
 \end{figure}
 
 While the oxygen component is the most important, it is not necessarily the one that is checked most often; however, it should be the easiest to check. Therefore, it is placed in the lower center. Occasional information pop-ups are placed above the oxygen bar, for the same reason: looking down is faster than looking up.
@@ -176,8 +190,9 @@ The minimum version is based on the Google Glass, featuring a monocular display 
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/UI_min.eps}
-    \caption{UI concept for a monocular HUD, worn in the upper left of the field of vision.}
+    \setlength{\fboxrule}{2pt}
+    \fbox{\includegraphics[width=0.97\textwidth]{assets/UI_min.eps}}
+    \captionbelow[UI for monocular HUD]{UI concept for a monocular HUD, worn in the upper left of the field of vision.}
     \label{fig:UI_min}
 \end{figure}
 
@@ -185,21 +200,21 @@ One could argue that some overlap of the components would be useful to make bett
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1\textwidth]{assets/UI_overlap.eps}
-    \caption{A negative example of overlapping elements. Placing the hazard symbols below the oxygen bar would save space, but disrupts the visual hierarchy.}
+    \includegraphics[width=0.8\textwidth]{assets/UI_overlap.eps}
+    \captionbelow[Example of overlapping elements]{A negative example of overlapping elements. Placing the hazard symbols below the oxygen bar would save space, but disrupts the visual hierarchy.}
     \label{fig:UI_overlap}
 \end{figure}
 
 \begin{figure}[hbt]
     \centering
     % \includegraphics[width=1\textwidth]{assets/HUD_size.eps}
-    \caption{HUD example}
+    \captionbelow{HUD example}
     \label{fig:HUD_colors}
 \end{figure}
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1\textwidth]{assets/HUD_size.eps}
-    \caption{Size comparison of the Microsoft HoloLens 2 and the Google Glass Enterprise Edition 2.}
+    \captionbelow[Size of Microsoft HoloLens and Google Glass]{Size comparison of the Microsoft HoloLens 2 and the Google Glass Enterprise Edition 2}
     \label{fig:HUD_size}
 \end{figure}
