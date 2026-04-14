@@ -4,58 +4,24 @@
 "One of the greatest benefits of data visualization is the sheer quantity of information that can be rapidly interpreted if it is presented well" [\cite{wareChapterOneFoundations2013}].
 
 Data visualization transforms data into information. Data itself is just noise, whereas information holds value—value that is created by the context through which the data is interpreted.
-% which determines in what way the data needs to be transformed 
 
 \subsection{Guiding Visual Search}
-
-% visual search mechanisms -> HVS
 
 Information needs to be located before it can be interpreted. To make this happen as quickly as possible, certain design principles can be utilized.
 
 To this end, \textcite{shaoHowDynamicInformation2023} present the 3V method, which refers to visual hierarchy, weight, and flow respectively.
-Visual hierarchy on the interface level uses unity, contrast, and order to sort and group information. 
-    % - unity of the same type conveys balanced relationship
-    % - contrast of different types clarifies information hierarchy
 The visual weight is described by the features of and space occupied by elements. It works through the distinction of objects, achieved by differing presentation. More visual weight means the object attracts more attention.
 The visual connections between elements describe the visual flow. If implemented correctly, flow guides the gaze to target information.
-
-% TODO properly describe results
-They evaluated this framework by testing visual search performance of four different label arrangements. The labels consisted of a string of numbers, and described boxes chaotically arranged on the screen.
-They found that visual search is more efficient, if the labels are arranged in vertical columns on the sides of the screen. This facilitates scanning of the content. Two reasons: if the labels are read left to right, it is easer to distinguish the start and end of them. Although the eye moves faster horizontally than vertically, which makes it easier to control jumps between rows.
-
-% perception is subjective, the mechanisms controlling it are not
-
-In a similar vein, \textcite{matthewsDesigningGlanceablePeripheral2006} explain: "Visuals that support top-down search will be easy to cognitively interpret. Visuals that support bottom-up search enable relevant information to pop-out."
 
 In summary, even when a user is consciously (i.e., top-down) searching for a specific element in the user interface, a well-structured design can leverage bottom-up attention to guide this visual search [\cite{shaoHowDynamicInformation2023}].
 
 \subsection{Facilitating Rapid Comprehension}
 
-To make information glanceable, concepts of data visualization can be leveraged.
+Despite the majority of data visualization being tailored to complex datasets, some concepts can still be utilized to make information glanceable.
 
-% semantics, giving meaning
-
-%Visual variables correspond to the fundamental design elements
-\textcite{wilke2VisualizingData2019} lists position, shape, size and color as basic elements for visualization. Position describes the placement of data, related to other points or axes of a diagram. As for color, hue and value should be distinguished, since they are suited for different kinds of data. Hues tend to work better for distinctive categories. Value for continuous data GRADIENTS, the eye is much more sensitive to differences in lightness (see Section \ref{sec:HVS_attention}).
-Hues can also be used for gradients (e.g. rainbow), but require much more intention to work.
-
-% Purposes of color to convey information are grouping or relationships. Grouping is necessary for the HUD, but is managed by the spatial location of and the spacing between elements.
-% visual encoding of information: encoding works by highlighting differences (e.g. if a monochrome display is green, the color green holds no meaning)
+\textcite{wilke2VisualizingData2019} identifies position, shape, size and color as the fundamental elements for visualization. Position describes the arrangement of data in relation to other points or axes in a diagram. As for color, a distinction should be made between hue and brightness, as these are appropriate for different types of data. Hues are better suited for clearly defined categories, while brightness is best for continuous data, since the eye is more sensitive to differences in brightness and can therefore distinguish smaller variations.
 
 Each of these elements can be used to encode information. Which element is used for which information influences the type of visualization. Importantly, this mapping must be unique, else it becomes ambiguous and obscures the meaning [\cite{wilke2VisualizingData2019}].
-
-% \cite{behrischQualityMetricsInformation2018}
-% - fig 3: metrics categorized by cognitive complexity
-% - component design focuses on mid-level perception and relating design patterns (reducing clutter, task effectiveness, details on demand)
-% - planned notification system exploits low-level perception (preattentive processing, gestalt laws, change blindness)
-% - visual patterns to intuitively understand mathematical patterns
-% - signal-to-noise ratio
-
-% abstracting from text
-matthewsToolkitManagingUser2004
-"Abstraction involves extracting features or reducing the fidelity of information so that it is easier to read “at a glance” than the raw input. Abstraction enables lower attention consumption of information."
-
-Information can be abstracted when the represented concept is simpler (e.g. ambient motion detector), in which case primitive elements of design, such as color and movement can be sufficient.
 
 \subsection{Visualizations for Single Value Data}
 
@@ -69,19 +35,3 @@ Ferdio, an agency specialized on infographics and data visualization, has create
     \captionbelow[Visualization options for single data]{The options for single data (highlighted in the menu bar) in Ferdio's data visualization library.}
     \label{fig:ferdio_single_data}
 \end{figure}
-
-% These visualizations are often accompanied by an icon, which serves as a description or label.
-
-% \textbf{Scaled-up numbers} are suitable for individual values that stand for themselves.
-
-% \textbf{Differential Indicators} often appear next to scaled-up numbers to track the difference to a previous value of the same parameter. Usually shaped as arrows or triangles, in red and green.
-
-% \textbf{Gauges} highlighting abstract 
-% "solid necessarily show specific data/numbers, more for abstract status evaluation
-% Angular Gauge uses a radial scale for specific data points (e.g. temperature)
-% dial over a radial scale with defined limits"
-
-% \textbf{Status Bars} visualize the progression of operations that need to be made visible to the user.
-% "Sometimes, the graphic is accompanied by a textual representation of the progress in a percent or quantitative format."
-
-% According to \textcite{xiaVisualizingWristImpact2025}, bar charts outperform radial visualization.

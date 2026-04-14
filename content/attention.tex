@@ -22,8 +22,6 @@ The requirements of situation awareness make clear that information has to be qu
 Peripheral displays do just that—keeping relevant information accessible while offering the choice of whether or not to continue with the current task [\cite{matthewsDefiningDesigningEvaluating2005}].
 On the other hand, so-called notification displays actively interrupt the user to prompt necessary action. 
 
-% \cite{birnholtzAwarenessDesktopExploring2010} peripheral display performance
-
 Building onto this categorization, \textcite{matthewsDesigningGlanceablePeripheral2006} introduces the concept of glanceability—a term used to describe information that is quickly and easily comprehended once it is paid attention to.
 Glanceability is directly impacted by the displayed amount of items, their salience, etc.—i.e. the attentional limits described in Section \ref{sec:HVS_attention}. In this context, \textcite{matthewsDesigningGlanceablePeripheral2006} emphasizes that visual components need to "balance distinctiveness with too much demand for attention."
 
@@ -36,35 +34,14 @@ According to \textcite{luGlanceableAREvaluating2020}, the interface caused frust
 
 In the gaze-summon interface, visual targets are placed near the position where the interface elements would be located. If these points are fixated for a certain amount of time, the information appears at that location. However, in industrial environments this delay may not be justifiable in the intended applications. Additionally, \textcite{luGlanceableAREvaluating2020} report that keeping the gaze on target might lead to eye strain if the display is used frequently. There was also an increase of false positives when participants took a turn, caused by reflexively looking into the intended direction, combined with eye-tracking jitter from the rapid head movement.
 
-% LU 2020
-% - mentions the display being less impactful when participants concentrated on the primary task.
-% - CON primary task of walking not comparable to task with high cognitive load + physical demands
-
-% Similar to the methods of "Glanceable AR", \textcite{ishiguroPeripheralVisionAnnotation2011} presents a method to show a simple icon that transitions to related information when gazed at.
-
-% This further ties into context-aware interfaces, which display information based on current task or cognitive load [\cite{rhodesWIMPInterfaceConsidered1998}]. The risk of false positives is unjustifiable in safety-critical environments.
-% context awareness \cite{krevelenSurveyAugmentedReality2010}
-
 These methods offer an interactive approach to countering information overload. That said, visual elements must also be designed in such a way as to draw the user's attention to the relevant information.
 
 \subsection{Capturing Attention}
 
 Peripheral displays are designed to enable passive monitoring of information. In critical situations, however, the display must be able to capture the user's attention, which can be achieved through the intentional use of motion.
 
-% Notifications are naturally associated with the cost of potentially distracting or completely interrupting the user.
-
 In their "Peripheral Displays Toolkit" \textcite{matthewsToolkitManagingUser2004} demonstrate how to assign appropriate notification levels to information and what the transitions between these levels should look like.
 Abrupt transitions, for example, are meant to interrupt the user in order to attract their full attention. When aiming for divided attention, it should be sufficient to update smaller areas of the screen or to use slower animations.
 
-% passive monitoring = inattention
-% active monitoring = divided attention
-
-% TABLE notification level and corresponding design choices + elements e.g. change blind, make aware, interrupt, demand action x size, location, color, motion (+ frequency),...
-
-% "While it may seem contradictory for a peripheral display to attract focused attention, this enables a display to be peripheral when it is not displaying important information. A watch alarm only requires focused attention when it goes off, alerting the user that it is time to go somewhere. If a user could not count on the alarm to attract her full attention, she would pay more attention to the watch."
-
 \textcite{janakaNotiFadeMinimizingOHMD2023} implemented this approach and demonstrated that using fade-in animations reduces the impact of interruption. The effectiveness of the notifications depends on their duration, position, as well as the complexity of the main task.
 
-% JANAKA 2023 "how notifications appear can signal their level of importance and urgency; slow fade-in notifications can and are suited to signal lower levels of urgency.
-
-% \cite{andersonSurveyAttentionManagement2018} notification strategies: mediating, indicating, mitigating

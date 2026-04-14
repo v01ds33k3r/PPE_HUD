@@ -1,8 +1,8 @@
 \section{Design Guidelines}
 \label{sec:guidelines}
 
-The following guidelines are a compilation of the points discussed in the preceding sections, as well as recommendations from other authors.
-They serve as a basis for the design of head-up displays intended to support the efficient completion of objectives without compromising safety.
+The following guidelines summarize the points discussed in the preceding sections as well as recommendations from other authors.
+They serve as a basis for the design of head-up displays aiming to support the efficient completion of objectives without compromising safety.
 
 To facilitate situation awareness, the HUD should be capable of providing as much information as possible without causing fatigue or sensory overload. The displayed information should be comprehensible in the shortest possible time. In an emergency, the system must be able to capture the user's attention without hindering decision-making or completely interrupting the primary task.
 
@@ -27,7 +27,7 @@ In addition, monochrome displays are more affordable and therefore offer economi
 As with all head-mounted devices, walking causes them to shake, which affects legibility [\cite{janakaNotiFadeMinimizingOHMD2023}]. Especially thin, horizontal lines tend to disappear optically due to the up- and down motion.
 \textcite{matsuuraReadabilityLegibilityFonts2019} confirm that heavier font weights improve readability. Naturally, the same requirements apply for stroke width in general.
 
-For example, the typeface "Inter" meets these criteria well. It features a uniform strokes width, a square letter form and good line spacing. Compare this with the typeface "League Gothic". It also has a consistent stroke width, but due to its thickness, there is less white space within each character. Even with increased tracking, the narrowly shaped letters make reading considerably more difficult.
+For example, the typeface "Inter" meets these criteria well. It features a uniform stroke width, a square letter form and good line spacing. Compare this with the typeface "League Gothic", which also has a consistent stroke width, but due to its thickness, there is less white space within each character. Even with increased tracking, the narrowly shaped letters make reading considerably more difficult.
 
 \begin{figure}[hbt]
     \centering
@@ -48,9 +48,6 @@ To determine optimal font sizes, \textcite{renkewitzOptimalFontSize2008} tested 
 \end{figure}
 
 \subsection{Iconography}
-
-% bigger planes capture attention, thus decreasing search time
-% - amount of coded information
 
 \textcite{janakaCanIconsOutperform2023} tested if, and under which conditions icons perform better than text. They found that icon-augmented notifications enabled significantly higher primary task performance than text only and reduced the level of interruption while maintaining reaction and comprehension. They also found icons are more comprehensible when task complexity increased or demanded more attention. Additionally, the notification were "easier to perceive in suboptimal conditions", including outdoors when walking.
 
@@ -77,61 +74,17 @@ Naturally, this requires the icons to be easily recognizable. To that end, \text
 The ability of (binocular) head-mounted displays to display content anywhere within the field of view always presents a trade-off between immediate access to information and an unobstructed central line of sight. In use cases involving a great deal of physical activity, a clear field of view should of course be given greater priority.
 
 \textcite{chuaPositioningGlassInvestigating2016} investigated the positioning of content on a monocular OST-HMD worn in front of the right eye. The display was divided into a 3 $\times$ 3 grid, spanning 12.5° vertically and 17° horizontally in both directions from the center.
-The top and most peripheral positions were found to be more comfortable and unobtrusive, although middle and bottom center positions were perceived more quickly.
-The center-right is recommended as best balance between both usability and comfort.
-They mention that the ideal display position is highly dependent on task requirements (e.g., center is better when driving, secondary information better in peripheral).
+The top and most peripheral positions were found to be more comfortable and unobtrusive, although middle and bottom center positions were perceived more quickly. The center-right was recommended as the best balance between both usability and comfort.
+They mention that the ideal display position is highly dependent on task requirements (e.g., the center is preferable when driving, while secondary information is better placed in the periphery).
 
-It was found that the upper and most peripheral positions were perceived as more comfortable and less intrusive, although positions in the center and lower center were perceived more quickly. 
-The position in the lower center is recommended as the best balance between usability and comfort.
-They note that the ideal display position depends heavily on the requirements of the specific task (e.g., the center is better for driving, while secondary information is better placed in the periphery).
+\textcite{linFindingOptimumPosition2021} divide HMD applications into four task categories: single (continuously focusing on display), alternating (switching back and forth between display and reality), background (passively monitoring the display for notifications) and dual (displayed information supplements physical primary task, e.g., live captions). Similar to \textcite{chuaPositioningGlassInvestigating2016}, they mention that optimal positioning depends on task type.
+Participants preferred a horizontal angle of 5.4° to 14.6° and found angles beyond that to be uncomfortable.
 
-% \cite{ishiguroPeripheralVisionAnnotation2011}: illustration perceivable angles of color, shapes, text
-
-\textcite{linFindingOptimumPosition2021} divide HMD applications into four task categories: single (continuously focusing on display), alternating (switching back and forth between display and reality), background (passively monitoring the display for notifications) and dual (displayed information supplements physical primary task, e.g., captions).
-Similar to \textcite{chuaPositioningGlassInvestigating2016}, they mention that optimal positioning depends on task type.
-Participants preferred 5.4° to 14.6° horizontally, farther out was uncomfortable.
-
-Ultimately, "there may be an ideal, general purpose HWD position between 8 to 20° temporally offset from line-of-sight. Horizontal FOV would thus be 12°."
-% - "the bottom-center position could be inferior in situations in which users have to look at their feet such as stairs mobility and rough terrain maneuvering."
-% - "A bottom-right display could also interfere with tasks involving the hands."
-
-\textcite{dowellEffectVisualLocation2002} mention 8° around the line of sight should be kept free, since it "can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed."
-% - "Additionally, it was shown that HUD symbology placed in the upper portion of the visual scene (greater than 8 deg from the central focus), led to improved simultaneous processing of the HUD symbology and the forward view." BUT "hypothesized that this difference is rooted in the reduced clutter and background motion found when the HUD overlaid the sky, as opposed to the ground."
-
-Clear zones to distinguish information
-
-Crowding (see Section \ref{sec:HVS_attention}) affects perception the most. It seems advisable to prefer wider spacing between elements. 
-
-Additionally, the number of components per side should be limited to three at most, anchoring them spatially to the corners and sides of the display and keeping the center of vision free. \cite{}
-
-% DYSON 2001 reading speed + line length
-
-% OST-HMD PERFORMANCE
-% \textcite{kimInfluencesAugmentedReality2019} tested a binocular HUD for warehouse order picking, which requires frequently referencing the displayed information.
-% They tested both on-demand and always-on methods. The on-demand showed worse task performance, and it was hypothesized that this was due to higher perceived workload, and higher mental and temporal demand, performance, effort, and frustration subscales (NASA-TLX).
-% - "performance, workload, and usability were more affected by UI designs than the HWD type."
-% - "Compared to the baseline paper pick list condition, using an HWD, especially with the graphic-based UI, led to improved job performance and reduced perceived workload, while causing increased discomfort"
-% - "Responses to the workplace cognitive failure scale also indicated a lower risk of cognitive failure specifically with the graphic-based UI design + always-on display."
+\textcite{dowellEffectVisualLocation2002} mention 8° around the line of sight should be kept free, since it "can induce cognitive tunneling and impair performance on the task over which the HUD is superimposed." 
+Ultimately, 8 to 20° horizontally seem to be a good compromise for most purposes [\cite{linFindingOptimumPosition2021}].
 
 \subsection{Notifications}
 
-- design according to required levels of attention and/or action
+Notification levels should be assigned according to the level of attention or action required. Each level should be coded as clearly as possible by choosing appropriate methods, such as abrupt movements for high urgency. If there are multiple independent high-priority notifications, they could be represented using different types of movement, such as flashing or bouncing. Furthermore, the more elements that attract attention, the less effective they are.
 
-- encode each notification level uniquely
-%Referencing rules for visual hierarchy, the usage of contrasts heightens difference between the two modes by limiting color and movement to emergency functions to get and keep attention without hindering reaction times.
-
-- use sparingly to avoid habituation and ensure the ability to capture the user's attention
-
-The billboard style occludes much of reality around the text, which should generally be avoided. However, exactly this feature makes it suitable for high priority notifications.
-
-\begin{table}[hb]
-    \centering
-    \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}}
-        \toprule
-        Passive Monitoring & Inattention & Static \\
-        Active Monitoring & Divided Attention & Slow Animation, Partial Elements \\
-        Action Required & Focused Attention & Abrupt Animation \\
-        \bottomrule
-    \end{tabular}
-    \captionbelow{Attention Levels and }
-\end{table}
+Although the billboard style occludes a large portion of the background around the text—which should generally be avoided—it is precisely this characteristic that makes it suitable for high-priority notifications.
